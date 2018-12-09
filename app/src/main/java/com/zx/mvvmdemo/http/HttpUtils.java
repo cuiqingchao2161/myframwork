@@ -2,6 +2,7 @@ package com.zx.mvvmdemo.http;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.zx.mvvmdemo.bean.HeaderModel;
 import com.zx.mvvmdemo.bean.SCResponseModel;
@@ -37,6 +38,8 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import com.zx.mvvmdemo.http.retrofitinterface.RetrofitInterface;
+
+import static android.content.ContentValues.TAG;
 
 public class HttpUtils {
 
@@ -91,14 +94,17 @@ public class HttpUtils {
                         .build();
             }
         };
-
-        mOkHttpClient = new OkHttpClient.Builder().
-                connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS).
-                readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS).
-                writeTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS).
-                cache(new Cache(mContext.getCacheDir(),20000000)).
-                build();
-
+        try {
+            mOkHttpClient = new OkHttpClient.Builder().
+                    connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS).
+                    readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS).
+                    writeTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS).
+                    cache(new Cache(mContext.getCacheDir(),20000000)).
+                    build();
+        } catch (Exception e) {
+            Log.e(TAG, "Unable to set http cache", e);
+            e.printStackTrace();
+        }
         mOkHttpClient.interceptors().add(mHeaderInterceptor);
         mOkHttpClient.networkInterceptors().add(mReWriteCacheControlInterceptor);
     }

@@ -29,7 +29,7 @@ public class NewsModelImpl implements INewsModel {
 
     @Override
     public void loadNewsData(final int page, final BaseLoadListener<SimpleNewsBean> loadListener) {
-        HttpUtils.getNewsData()
+        HttpUtils.getInstance().getRetrofit().getNewsData()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new DisposableObserver<NewsBean>() {

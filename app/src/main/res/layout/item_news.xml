@@ -59,7 +59,7 @@
             android:layout_below="@id/header_iv"
             android:layout_marginEnd="15dp"
             android:layout_marginTop="8dp"
-            android:onClick="@{()->adapter.clickDianZan(simpleNewsBean,position)}"
+            android:onClick="@{adapter.clickDianZan(simpleNewsBean,position)}"
             app:resId="@{simpleNewsBean.isGood ? R.mipmap.dianzan_press : R.mipmap.dianzan_normal }" />
 
     </RelativeLayout>

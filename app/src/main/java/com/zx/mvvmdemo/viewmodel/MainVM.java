@@ -1,20 +1,22 @@
 package com.zx.mvvmdemo.viewmodel;
 
+import android.app.Application;
+import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
+import android.support.annotation.NonNull;
 
 import com.zx.mvvmdemo.adapter.NewsAdapter;
 
-public class MainVM extends ViewModel {
+public class MainVM extends AndroidViewModel {
     private static final String TAG = "NewsVM";
     MutableLiveData<String> mutableLiveData = new MutableLiveData<>();
-    private NewsAdapter mAdapter;
     private int currPage = 1; //当前页数
     private int loadType; //加载数据的类型
 
-    public MainVM( NewsAdapter mAdapter) {
-        this.mAdapter = mAdapter;
+    public MainVM(@NonNull Application application) {
+        super(application);
     }
 
     public LiveData getLiveData(){

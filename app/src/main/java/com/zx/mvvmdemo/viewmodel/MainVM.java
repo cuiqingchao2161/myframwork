@@ -7,7 +7,6 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.support.annotation.NonNull;
 
-import com.zx.mvvmdemo.adapter.NewsAdapter;
 
 public class MainVM extends AndroidViewModel {
     private static final String TAG = "NewsVM";

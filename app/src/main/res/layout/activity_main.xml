@@ -34,19 +34,6 @@
                     app:layoutManager="LinearLayoutManager" />
             </FrameLayout>
         </FrameLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <com.jcodecraeer.xrecyclerview.XRecyclerView
-                android:id="@+id/news_rv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-
-        </LinearLayout>
     </LinearLayout>
 
 

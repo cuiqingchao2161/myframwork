@@ -105,8 +105,8 @@ public class HttpUtils {
             Log.e(TAG, "Unable to set http cache", e);
             e.printStackTrace();
         }
-        mOkHttpClient.interceptors().add(mHeaderInterceptor);
-        mOkHttpClient.networkInterceptors().add(mReWriteCacheControlInterceptor);
+//        mOkHttpClient.interceptors().add(mHeaderInterceptor);
+//        mOkHttpClient.networkInterceptors().add(mReWriteCacheControlInterceptor);
     }
 
     /**

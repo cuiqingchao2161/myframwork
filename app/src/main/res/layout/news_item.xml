@@ -15,7 +15,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:onClick="@{() ->  callback.onClick(newsItem)}"
+
         android:orientation="horizontal"
         android:minHeight="90dp"
         android:paddingTop="4dp"

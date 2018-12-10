@@ -43,7 +43,7 @@ public class NewsVM extends AndroidViewModel {
     private INewsModel mNewsModel;
     private int currPage = 1; //当前页数
     //生命周期观察的数据
-    private LiveData<NewsData> mLiveObservableData;
+    private LiveData<NewsData> mLiveObservableData  ;
     MutableLiveData<List<SimpleNewsBean>> mutableLiveData = new MutableLiveData<>();
 //    private MyProgressDialog mProgressDislog;
     private Context mContext;

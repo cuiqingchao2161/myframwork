@@ -29,16 +29,16 @@ public class NewsData {
 
     public static class ResultsBean {
 
-        private String _id;
-        private String createdAt;
-        private String desc;
-        private String publishedAt;
-        private String source;
-        private String type;
-        private String url;
-        private boolean used;
-        private String who;
-        private List<String> images;
+        public String _id;
+        public String createdAt;
+        public String desc;
+        public String publishedAt;
+        public String source;
+        public String type;
+        public String url;
+        public boolean used;
+        public String who;
+        public List<String> images;
 
         public String get_id() {
             return _id;

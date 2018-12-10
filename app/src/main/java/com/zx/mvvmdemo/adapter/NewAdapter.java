@@ -83,6 +83,7 @@ public class NewAdapter extends RecyclerView.Adapter<NewAdapter.GirlsViewHolder>
     public void onBindViewHolder(GirlsViewHolder holder, int position) {
         holder.binding.setNewsItem(newsList.get(position));
         holder.binding.executePendingBindings();
+
     }
 
     @Override

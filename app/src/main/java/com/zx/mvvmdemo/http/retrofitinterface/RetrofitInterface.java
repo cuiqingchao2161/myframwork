@@ -25,4 +25,7 @@ public interface RetrofitInterface {
 
 //    @GET("services/RestServices/yundihealth/messageCenter/advert")
 //    Call<SCResponseModel<List<SCAdvertisementModel>>> getAdvertisement(@Query("comcode") String comCode);
+
+    @GET ("https://image.baidu.com/search/index?tn=baiduimage&ct=201326592&lm=-1&cl=2&ie=gb18030&word=%C3%C0%C5%AE%CD%BC&fr=ala&ala=1&alatpl=adress&pos=0&hs=2&xthttps=111111")
+    Observable<GirlsData> getFulData();
 }

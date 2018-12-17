@@ -62,7 +62,7 @@ public class HttpUtils {
         //初始化retrofit的配置
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
-                    .baseUrl(URLConstant.URL_BASE)
+                    .baseUrl(URLConstant.GankHost)
                     .client(mOkHttpClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
@@ -96,6 +96,8 @@ public class HttpUtils {
         };
         try {
             mOkHttpClient = new OkHttpClient.Builder().
+                    addInterceptor(mHeaderInterceptor).
+                    addNetworkInterceptor(mReWriteCacheControlInterceptor).
                     connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS).
                     readTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS).
                     writeTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS).

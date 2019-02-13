@@ -5,10 +5,21 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.databinding.DataBindingUtil;
+import android.graphics.Bitmap;
+import android.net.http.SslError;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.webkit.CookieManager;
+import android.webkit.CookieSyncManager;
+import android.webkit.SslErrorHandler;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import com.zx.mvvmdemo.R;
@@ -57,7 +68,7 @@ public class MainActivity extends BaseActivity {
         girlsAdapter = new GirlsAdapter(this,mGirlList);
         binding.newsList.setAdapter(girlsAdapter);
 
-        newsVM.getData();
+
         subscribeToModel(newsVM);
         newsVM.getLiveData().observe(this, new Observer() {
             @Override
@@ -67,6 +78,67 @@ public class MainActivity extends BaseActivity {
             }
         });
         newsVM.loadRefreshData();
+        WebView webView = new WebView(this);
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setRenderPriority(WebSettings.RenderPriority.HIGH);
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+        webSettings.setAppCacheEnabled(true);
+        webSettings.setBlockNetworkImage(false);
+        webSettings.setAppCachePath("");
+        webSettings.setCacheMode(WebSettings.LOAD_DEFAULT);
+        webSettings.setDefaultFontSize(10);
+        /**
+         * MIXED_CONTENT_ALWAYS_ALLOW：允许从任何来源加载内容，即使起源是不安全的；
+         * MIXED_CONTENT_NEVER_ALLOW：不允许Https加载Http的内容，即不允许从安全的起源去加载一个不安全的资源；
+         * MIXED_CONTENT_COMPATIBILITY_MODE：当涉及到混合式内容时，WebView 会尝试去兼容最新Web浏览器的风格。
+         * (5.0以下默认允许加载http和https混合的页面，5.0+默认禁止)
+         **/
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            webView.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        }
+
+
+        webView.setWebViewClient(new WebViewClient(){
+            @Override
+            public void onReceivedSslError(WebView view, SslErrorHandler handler, SslError error) {
+                //cancel( ) 停止加载问题页面
+                //proceed( )忽略SSL证书错误，继续加载页面
+
+                //如果我们不考虑证书安全，则可以直接这样写
+                handler.proceed();
+            }
+
+            @Override
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                super.onPageStarted(view, url, favicon);
+            }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+            }
+
+            //加载新的URL时，给webview一个接管控件的机会,可以对url做处理。返回true意味着宿主应用程序处理URL，
+            // 而返回false意味着当前WebVIEW处理URL，此方法在POST请求不会调用。
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                return super.shouldOverrideUrlLoading(view, request);
+            }
+        });
+        webView.setWebChromeClient(new WebChromeClient(){
+            @Override
+            public void onProgressChanged(WebView view, int newProgress) {
+                super.onProgressChanged(view, newProgress);
+            }
+
+            @Override
+            public void onReceivedTitle(WebView view, String title) {
+                super.onReceivedTitle(view, title);
+            }
+        });
+
+
     }
 
     private void initGirlsData(){

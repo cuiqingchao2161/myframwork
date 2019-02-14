@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends BaseActivity {
+public class GirlsActivity extends BaseActivity {
     private ActivityMainBinding binding;
     private NewAdapter newAdapter; //新闻列表的适配器
     private GirlsAdapter girlsAdapter; //新闻列表的适配器
@@ -95,7 +95,7 @@ public class MainActivity extends BaseActivity {
     NewsItemClickCallback girlItemClickCallback = new NewsItemClickCallback() {
         @Override
         public void onClick(NewsData.ResultsBean fuliItem) {
-            Toast.makeText(MainActivity.this, fuliItem.getDesc(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(GirlsActivity.this, fuliItem.getDesc(), Toast.LENGTH_SHORT).show();
         }
     };
     @Override

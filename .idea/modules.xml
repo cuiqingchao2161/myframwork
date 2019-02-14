@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://I:\android demos\MVVMDemo-master\MVVMDemo.iml" filepath="I:\android demos\MVVMDemo-master\MVVMDemo.iml" />
+      <module fileurl="file://I:/android demos/MVVMDemo-master/MVVMDemo.iml" filepath="I:/android demos/MVVMDemo-master/MVVMDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyFramwork.iml" filepath="$PROJECT_DIR$/MyFramwork.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myFramwork.iml" filepath="$PROJECT_DIR$/myFramwork.iml" />
     </modules>
   </component>
 </project>

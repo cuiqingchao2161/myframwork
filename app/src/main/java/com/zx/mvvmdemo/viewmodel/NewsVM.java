@@ -5,25 +5,22 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.Transformations;
-import android.arch.lifecycle.ViewModel;
 import android.content.Context;
 import android.databinding.ObservableField;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.zx.mvvmdemo.base.BaseLoadListener;
-import com.zx.mvvmdemo.bean.NewsBean;
 import com.zx.mvvmdemo.bean.NewsData;
 import com.zx.mvvmdemo.bean.SimpleNewsBean;
 import com.zx.mvvmdemo.constant.MainConstant;
 import com.zx.mvvmdemo.http.HttpUtils;
 import com.zx.mvvmdemo.http.NetUtils;
-import com.zx.mvvmdemo.http.retrofitinterface.RetrofitInterface;
 import com.zx.mvvmdemo.model.INewsModel;
 import com.zx.mvvmdemo.model.NewsModelImpl;
 import com.zx.mvvmdemo.utils.ToastUtils;
-import com.zx.mvvmdemo.widgets.MyProgressDialog;
 
+import java.lang.reflect.Proxy;
 import java.util.List;
 
 import io.reactivex.Observer;
@@ -58,6 +55,7 @@ public class NewsVM extends AndroidViewModel {
         super(application);
         mApplication = application;
         mNewsModel = new NewsModelImpl();
+        Proxy.newProxyInstance()
     }
 
     public LiveData getLiveData(){

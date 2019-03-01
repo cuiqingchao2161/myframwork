@@ -3,7 +3,6 @@ package com.zx.mvvmdemo.utils.anr_analyze;
 import android.os.Handler;
 import android.os.Message;
 
-import com.sybercare.intelligentbphome.devicemanage.usb.DCCardManager;
 
 /**
  * Created by dapen on 2017/11/8.
@@ -41,10 +40,7 @@ public class ANRWatchDog extends Thread {
             }
             //如果相等，说明过了ACTIVITY_ANR_TIMEOUT的时间后watchDogHandler仍没有处理消息，已经ANR了
             if (timeTick == lastTimeTick) {
-                if(!DCCardManager.isOpening && !DCCardManager.reading){
-                    throw new ANRException();
-                }
-
+                throw new ANRException();
             } else {
                 lastTimeTick = timeTick;
             }

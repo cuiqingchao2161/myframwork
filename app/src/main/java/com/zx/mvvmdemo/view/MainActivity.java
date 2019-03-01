@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.zx.mvvmdemo.R;
 import com.zx.mvvmdemo.adapter.GirlsAdapter;
 import com.zx.mvvmdemo.adapter.NewAdapter;
@@ -53,6 +54,7 @@ public class MainActivity extends BaseActivity {
         newAdapter = new NewAdapter(girlItemClickCallback);
         girlsAdapter = new GirlsAdapter(this,mGirlList);
         binding.newsList.setAdapter(girlsAdapter);
+
 
 
 //        subscribeToModel(newsVM);

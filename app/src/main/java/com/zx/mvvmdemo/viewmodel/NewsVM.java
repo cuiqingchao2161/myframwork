@@ -20,7 +20,6 @@ import com.zx.mvvmdemo.model.INewsModel;
 import com.zx.mvvmdemo.model.NewsModelImpl;
 import com.zx.mvvmdemo.utils.ToastUtils;
 
-import java.lang.reflect.Proxy;
 import java.util.List;
 
 import io.reactivex.Observer;
@@ -55,7 +54,6 @@ public class NewsVM extends AndroidViewModel {
         super(application);
         mApplication = application;
         mNewsModel = new NewsModelImpl();
-        Proxy.newProxyInstance()
     }
 
     public LiveData getLiveData(){

@@ -3,6 +3,8 @@ package com.zx.mvvmdemo.utils.anr_analyze;
 import android.os.Handler;
 import android.os.Message;
 
+import retrofit2.http.HEAD;
+
 
 /**
  * Created by dapen on 2017/11/8.

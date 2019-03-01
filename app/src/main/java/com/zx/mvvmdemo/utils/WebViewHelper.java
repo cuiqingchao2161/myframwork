@@ -1,16 +1,10 @@
 package com.zx.mvvmdemo.utils;
 
-import android.graphics.Bitmap;
 import android.os.Build;
-import android.view.View;
 import android.widget.LinearLayout;
 
-import com.tencent.smtt.export.external.interfaces.SslError;
-import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
-import com.tencent.smtt.export.external.interfaces.WebResourceRequest;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
-import com.tencent.smtt.sdk.WebViewClient;
 import com.zx.mvvmdemo.base.MyApplication;
 
 /**
@@ -50,6 +44,8 @@ public class WebViewHelper {
             mWebView.getSettings().setMixedContentMode(android.webkit.WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         }
 
+
+//        mWebView.setWebChromeClient(new WebChromeClient());
 //        mWebView.setWebViewClient(new WebViewClient(){
 //
 //            @Override

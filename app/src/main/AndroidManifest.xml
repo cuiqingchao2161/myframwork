@@ -65,22 +65,41 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".view.BigimgshowActivity" />
-        <activity android:name=".view.GirlsActivity" />
-        <activity android:name=".base.BaseActivity" />
-        <activity android:name=".view.WebActivity">
+        <!--<activity android:name=".view.MainActivity">-->
             <!--<intent-filter>-->
                 <!--<action android:name="android.intent.action.MAIN" />-->
 
                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
+        <!--</activity>-->
+        <activity android:name=".view.BigimgshowActivity" />
+        <activity android:name=".view.GirlsActivity" />
+        <activity android:name=".base.BaseActivity" />
+        <activity android:name=".view.WebActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+
+        <service
+            android:name="com.cui.aidl.service.MyService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.cui.aidl.service.IMyAidlInterface"></action>
+            </intent-filter>
+        </service>
+
+        <activity android:name="com.cui.aidl.client.AidlClientActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

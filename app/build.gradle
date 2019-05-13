@@ -5,7 +5,6 @@ android {
         enabled = true
     }
     compileSdkVersion 26
-    buildToolsVersion "25.0.1"
     defaultConfig {
         applicationId "com.zx.mvvmdemo"
         minSdkVersion 17
@@ -53,7 +52,7 @@ dependencies {
 
 //    annotationProcessor "android.arch.lifecycle:compiler:$lifecycle_version"
     // alternately - if using Java8, use the following instead of compiler
-//    implementation "android.arch.lifecycle:common-java8:$lifecycle_version"
+//    implementation "android.arch.lifecycle:common-java8:$lifecycleDigestUtils_version"
 
     // optional - ReactiveStreams support for LiveData
     compile "android.arch.lifecycle:reactivestreams:$lifecycle_version"

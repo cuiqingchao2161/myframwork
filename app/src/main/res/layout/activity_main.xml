@@ -9,7 +9,7 @@
 
         <variable
             name="newsViewModel"
-            type="com.zx.mvvmdemo.viewmodel.NewsVM"/>
+            type="com.cui.mvvmdemo.viewmodel.NewsVM"/>
     </data>
 
     <LinearLayout

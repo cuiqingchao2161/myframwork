@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.cui.aidl.service.IMyAidlInterface;
-import com.zx.mvvmdemo.R;
+import com.cui.mvvmdemo.R;
 
 public class AidlClientActivity extends Activity {
     IMyAidlInterface aidl;

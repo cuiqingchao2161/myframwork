@@ -1,4 +1,4 @@
-package com.zx.mvvmdemo;
+package com.cui.mvvmdemo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.zx.mvvmdemo", appContext.getPackageName());
+        assertEquals("com.cui.mvvmdemo", appContext.getPackageName());
     }
 }

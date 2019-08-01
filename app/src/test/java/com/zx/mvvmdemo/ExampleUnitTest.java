@@ -1,4 +1,4 @@
-package com.zx.mvvmdemo;
+package com.cui.mvvmdemo;
 
 import org.junit.Test;
 

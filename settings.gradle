@@ -1,1 +1,1 @@
-include ':app',':vrModule', ':myComLib'
+include ':app',':vrlibrary', ':myComLib'

@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <import type="android.view.View"/>
         <variable name="newsItem"
-                  type="com.zx.mvvmdemo.bean.NewsData.ResultsBean"/>
+                  type="com.cui.mvvmdemo.bean.NewsData.ResultsBean"/>
         <variable name="callback"
-                  type="com.zx.mvvmdemo.viewmodel.NewsItemClickCallback"/>
+                  type="com.cui.mvvmdemo.viewmodel.NewsItemClickCallback"/>
     </data>
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"

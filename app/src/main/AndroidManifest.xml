@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zx.mvvmdemo">
+    package="com.cui.mvvmdemo">
 
     <!-- Required  JPush 一些系统要求的权限，如访问网络等 -->
     <uses-permission android:name="${applicationId}.permission.JPUSH_MESSAGE" />
@@ -66,7 +66,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
-            android:name="com.com.zx.mvvmdemo.configs.MyGlideModule"
+            android:name="com.com.cui.mvvmdemo.configs.MyGlideModule"
             android:value="GlideModule" />
 
         <!-- <activity android:name=".view.MainActivity"> -->
@@ -98,21 +98,12 @@
         </service>
 
         <activity android:name="com.cui.aidl.client.AidlClientActivity">
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN" />-->
-
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
-        </activity>
-        <activity android:name=".view.SampleActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".module.OPENGLTestActivity" />
     </application>
 
 </manifest>

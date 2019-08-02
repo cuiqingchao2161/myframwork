@@ -57,32 +57,41 @@ public class GLRenderer implements Renderer {
                     "}\n";
 
 
+    //透视远近点
     private static final float Z_NEAR = 0.1f;
     private static final float Z_FAR = 100.0f;
 
+    //球体模型
     private UVSphere mEastShell = null;
     private UVSphere mWestShell = null;
 
+    //旋转角度
     private double mRotationAngleY;
     private double mRotationAngleXZ;
 
     private Photo mTexture;
+    //纹理照片是否有更新
     private boolean mTextureUpdate = false;
 
+    //透视宽高比
     private float mScreenAspectRatio;
 
+    //相机位置
     private float mCameraPosX = 0.0f;
     private float mCameraPosY = 0.0f;
     private float mCameraPosZ = 0.0f;
 
+    //目标点位置
     private float mCameraDirectionX = 0.0f;
     private float mCameraDirectionY = 0.0f;
     private float mCameraDirectionZ = 1.0f;
 
+    //相机拍摄角度
     private float mCameraFovDegree = 100;
 
     private int[] mTextures = new int[2];
 
+    //着色器变量引用
     private int mPositionHandle;
     private int mProjectionMatrixHandle;
     private int mViewMatrixHandle;
@@ -98,9 +107,11 @@ public class GLRenderer implements Renderer {
      * Constructor
      */
     public GLRenderer() {
+        //建模
         mEastShell = new UVSphere(Constants.TEXTURE_SHELL_RADIUS, Constants.SHELL_DIVIDES, true);
         mWestShell = new UVSphere(Constants.TEXTURE_SHELL_RADIUS, Constants.SHELL_DIVIDES, false);
 
+        //初始化其实角度
         mRotationAngleY = 0.0f;
         mRotationAngleXZ = 0.0f;
     }
@@ -176,17 +187,18 @@ public class GLRenderer implements Renderer {
         //视口
         GLES20.glViewport(0, 0, width, _height);
 
-        //摄像机设置
+        //摄像机设置，运行后得出相机位置矩阵元素赋值给mViewMatrix
         Matrix.setLookAtM(
-                mViewMatrix,//相机位置矩阵
+                mViewMatrix,//存储生成相机位置矩阵元素的float[]数组
                 0,//偏移
                 mCameraPosX, mCameraPosY, mCameraPosZ, //相机位置
                 mCameraDirectionX, mCameraDirectionY, mCameraDirectionZ, //目标点位置
                 0.0f, 1.0f, 0.0f //up向量x/y/z分量
         );
 
+        //透视矩阵设置，运行后得出透视投影矩阵元素赋值给mProjectionMatrix
         Matrix.perspectiveM(
-                mProjectionMatrix, //透视图位置矩阵
+                mProjectionMatrix, //存储生成透视投影矩阵元素的float[]数组
                 0, //偏移
                 mCameraFovDegree, //相机角度
                 mScreenAspectRatio, //透视图长宽比

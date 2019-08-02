@@ -21,25 +21,40 @@ import javax.microedition.khronos.opengles.GL10;
  */
 public class GLRenderer implements Renderer {
 
+    /**
+     * aPosition 顶点着色器坐标
+     * aUV 纹理坐标
+     * uView 相机位置
+     * uModel 目标物体位置
+     * uProjection 裁剪投影场景
+     * vUV 发送片元着色器坐标
+     * gl_Position 內建变量 顶点位置
+     * uProjection * uView * uModel * aPosition 对顶点着色器坐标分别做位置、相机、透视变换得出最终坐标
+     */
     private final String VSHADER_SRC =
             "attribute vec4 aPosition;\n" +
-            "attribute vec2 aUV;\n" +
-            "uniform mat4 uProjection;\n" +
-            "uniform mat4 uView;\n" +
-            "uniform mat4 uModel;\n" +
-            "varying vec2 vUV;\n" +
-            "void main() {\n" +
-            "  gl_Position = uProjection * uView * uModel * aPosition;\n" +
-            "  vUV = aUV;\n" +
-            "}\n";
+                    "attribute vec2 aUV;\n" +
+                    "uniform mat4 uProjection;\n" +
+                    "uniform mat4 uView;\n" +
+                    "uniform mat4 uModel;\n" +
+                    "varying vec2 vUV;\n" +
+                    "void main() {\n" +
+                    "  gl_Position = uProjection * uView * uModel * aPosition;\n" +
+                    "  vUV = aUV;\n" +
+                    "}\n";
 
+    /**
+     * precision mediump 中等精度
+     * uTex 二维纹理采样器 代表一套/一幅纹理贴图
+     * vUV 接收片元着色器坐标
+     */
     private final String FSHADER_SRC =
             "precision mediump float;\n" +
-            "varying vec2 vUV;\n" +
-            "uniform sampler2D uTex;\n" +
-            "void main() {\n" +
-            "  gl_FragColor = texture2D(uTex, vUV);\n" +
-            "}\n";
+                    "varying vec2 vUV;\n" +
+                    "uniform sampler2D uTex;\n" +
+                    "void main() {\n" +
+                    "  gl_FragColor = texture2D(uTex, vUV);\n" +
+                    "}\n";
 
 
     private static final float Z_NEAR = 0.1f;
@@ -75,9 +90,9 @@ public class GLRenderer implements Renderer {
     private int mTexHandle;
     private int mModelMatrixHandle;
 
-    private final float[] mProjectionMatrix = new float[16];
-    private final float[] mViewMatrix = new float[16];
-    private final float[] mModelMatrix = new float[16];
+    private final float[] mProjectionMatrix = new float[16];//投影矩阵
+    private final float[] mViewMatrix = new float[16];//相机位置矩阵4*4
+    private final float[] mModelMatrix = new float[16];//目标物体矩阵
 
     /**
      * Constructor
@@ -97,8 +112,6 @@ public class GLRenderer implements Renderer {
      */
     @Override
     public void onDrawFrame(final GL10 gl) {
-        if(mTexture == null)
-            return;
         scroll(1f);
         mCameraDirectionX = (float) (Math.cos(mRotationAngleXZ)*Math.cos(mRotationAngleY));
         mCameraDirectionZ = (float) (Math.sin(mRotationAngleXZ)*Math.cos(mRotationAngleY));
@@ -158,12 +171,27 @@ public class GLRenderer implements Renderer {
     public void onSurfaceChanged(final GL10 gl, final int width, final int height) {
 
         int _height = height;
+        //屏幕宽高比例
         mScreenAspectRatio = (float) width / (float) (_height == 0 ? 1 : _height);
-
+        //视口
         GLES20.glViewport(0, 0, width, _height);
 
-        Matrix.setLookAtM(mViewMatrix, 0, mCameraPosX, mCameraPosY, mCameraPosZ, mCameraDirectionX, mCameraDirectionY, mCameraDirectionZ, 0.0f, 1.0f, 0.0f);
-        Matrix.perspectiveM(mProjectionMatrix, 0, mCameraFovDegree, mScreenAspectRatio, Z_NEAR, Z_FAR);
+        //摄像机设置
+        Matrix.setLookAtM(
+                mViewMatrix,//相机位置矩阵
+                0,//偏移
+                mCameraPosX, mCameraPosY, mCameraPosZ, //相机位置
+                mCameraDirectionX, mCameraDirectionY, mCameraDirectionZ, //目标点位置
+                0.0f, 1.0f, 0.0f //up向量x/y/z分量
+        );
+
+        Matrix.perspectiveM(
+                mProjectionMatrix, //透视图位置矩阵
+                0, //偏移
+                mCameraFovDegree, //相机角度
+                mScreenAspectRatio, //透视图长宽比
+                Z_NEAR, Z_FAR//近点 远点
+        );
 
         return;
     }
@@ -180,39 +208,50 @@ public class GLRenderer implements Renderer {
         int fShader;
         int program;
 
+        //加载顶点着色程序
         vShader = loadShader(GLES20.GL_VERTEX_SHADER, VSHADER_SRC);
+        //加载片元着色程序
         fShader = loadShader(GLES20.GL_FRAGMENT_SHADER, FSHADER_SRC);
 
         program = GLES20.glCreateProgram();
         GLES20.glAttachShader(program, vShader);
         GLES20.glAttachShader(program, fShader);
+        //连接着色程序
         GLES20.glLinkProgram(program);
-
+        //使用着色程序
         GLES20.glUseProgram(program);
 
+        //获取着色程序中变量的引用
+        //顶点位置
         mPositionHandle = GLES20.glGetAttribLocation(program, "aPosition");
+        //纹理坐标
         mUVHandle = GLES20.glGetAttribLocation(program, "aUV");
+        //投影
         mProjectionMatrixHandle = GLES20.glGetUniformLocation(program, "uProjection");
+        //相机位置
         mViewMatrixHandle = GLES20.glGetUniformLocation(program, "uView");
+        //2d纹理采样器
         mTexHandle = GLES20.glGetUniformLocation(program, "uTex");
+        //物体位置
         mModelMatrixHandle = GLES20.glGetUniformLocation(program, "uModel");
 
+        //清空界面
         GLES20.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
         return;
     }
 
-   public void scroll(float distance){
+    public void scroll(float distance){
 
-       float diffX = distance / Constants.ON_SCROLL_DIVIDER_X;
+        float diffX = distance / Constants.ON_SCROLL_DIVIDER_X;
 
 //       if (Math.abs(diffX) < Constants.THRESHOLD_SCROLL_X) {
 //           diffX = 0.0f;
 //       }
-         rotate(diffX, 0);
+        rotate(diffX, 0);
 
 
-   }
+    }
 
     /**
      * Rotation process method
@@ -274,10 +313,6 @@ public class GLRenderer implements Renderer {
     }
 
 
-    public void refresh(){
-        mTextureUpdate = true;
-    }
-
     /**
      * GL error judgment method for debugging
      * @param TAG TAG output character string
@@ -314,20 +349,12 @@ public class GLRenderer implements Renderer {
             GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T, GLES20.GL_CLAMP_TO_EDGE);
 
             Bitmap dividedBitmap = Bitmap.createBitmap(bitmap, (dividedWidth * textureIndex), 0, dividedWidth, bitmap.getHeight());
+
             GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, dividedBitmap, 0);
             dividedBitmap.recycle();
         }
 
-//        bitmap.recycle();
         return;
-    }
-
-    public void release(){
-        if(mTexture!=null && !mTexture.getPhoto().isRecycled()){
-            mTexture.getPhoto().recycle();
-            mTexture = null;
-//            System.gc();
-        }
     }
 
 

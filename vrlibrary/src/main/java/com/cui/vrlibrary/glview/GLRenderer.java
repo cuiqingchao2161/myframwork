@@ -325,6 +325,9 @@ public class GLRenderer implements Renderer {
     }
 
 
+    public void refresh(){
+        mTextureUpdate = true;
+    }
     /**
      * GL error judgment method for debugging
      * @param TAG TAG output character string
@@ -378,5 +381,13 @@ public class GLRenderer implements Renderer {
         GLES20.glCompileShader(shader);
 
         return shader;
+    }
+
+    public void release(){
+        if(mTexture!=null && !mTexture.getPhoto().isRecycled()){
+            mTexture.getPhoto().recycle();
+            mTexture = null;
+//            System.gc();
+        }
     }
 }

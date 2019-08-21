@@ -67,23 +67,17 @@
             android:name="com.com.cui.mvvmdemo.configs.MyGlideModule"
             android:value="GlideModule" />
 
-        <!-- <activity android:name=".view.MainActivity"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.MAIN" /> -->
-        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-        <!-- </intent-filter> -->
-        <!-- </activity> -->
+         <activity android:name=".view.OPENGLTestActivity">
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>
+
         <activity android:name=".view.BigimgshowActivity" />
         <activity android:name=".view.GirlsActivity" />
         <activity android:name=".base.BaseActivity" />
         <activity android:name=".view.WebActivity">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
 
         <service
@@ -96,12 +90,7 @@
         </service>
 
         <activity android:name=".view.OPENGLTestActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

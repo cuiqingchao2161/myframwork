@@ -1,9 +1,5 @@
 package com.cui.mvvmdemo.adapter;
 
-import android.databinding.DataBindingUtil;
-import android.support.annotation.Nullable;
-import android.support.v7.util.DiffUtil;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -13,6 +9,11 @@ import com.cui.mvvmdemo.databinding.NewsItemBinding;
 import com.cui.mvvmdemo.viewmodel.NewsItemClickCallback;
 
 import java.util.List;
+
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 /**

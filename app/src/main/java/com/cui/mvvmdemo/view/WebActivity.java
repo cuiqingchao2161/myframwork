@@ -2,18 +2,17 @@ package com.cui.mvvmdemo.view;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
 import com.tencent.smtt.export.external.interfaces.SslError;
 import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
-import com.tencent.smtt.export.external.interfaces.WebResourceRequest;
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
 import com.cui.mvvmdemo.R;
 import com.cui.mvvmdemo.utils.WebViewHelper;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class WebActivity extends AppCompatActivity {
     private WebView mWebView;

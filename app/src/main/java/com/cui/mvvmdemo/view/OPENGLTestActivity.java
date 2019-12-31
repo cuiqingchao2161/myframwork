@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -17,6 +16,8 @@ import com.cui.vrlibrary.model.Photo;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class OPENGLTestActivity extends AppCompatActivity {
     GLPhotoView glSurfaceView;

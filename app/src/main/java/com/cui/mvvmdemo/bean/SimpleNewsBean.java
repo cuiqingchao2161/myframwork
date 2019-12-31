@@ -1,8 +1,8 @@
 package com.cui.mvvmdemo.bean;
 
-import android.databinding.ObservableBoolean;
-import android.databinding.ObservableField;
-import android.databinding.ObservableInt;
+import androidx.databinding.ObservableBoolean;
+import androidx.databinding.ObservableField;
+import androidx.databinding.ObservableInt;
 
 /**
  * 作者： 周旭 on 2017年10月17日 0017.

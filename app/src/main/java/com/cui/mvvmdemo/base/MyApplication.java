@@ -3,12 +3,14 @@ package com.cui.mvvmdemo.base;
 import android.app.Application;
 import android.util.Log;
 
+import com.cui.lib.toast.ToastUtils;
 import com.tencent.smtt.sdk.QbSdk;
 import com.tencent.smtt.sdk.WebView;
 import com.cui.mvvmdemo.http.HttpUtils;
 import com.cui.mvvmdemo.http.retrofitinterface.RetrofitInterface;
 import com.cui.mvvmdemo.utils.DensityHelper;
 import com.cui.mvvmdemo.utils.WebViewHelper;
+import com.cui.lib.toast.style.ToastAliPayStyle;
 
 /**
  * Created by Administrator on 2018/11/25.
@@ -33,6 +35,7 @@ public class MyApplication extends Application {
 
 
         initWeb();
+        ToastUtils.init(this, new ToastAliPayStyle());
     }
 
     private void initWeb(){

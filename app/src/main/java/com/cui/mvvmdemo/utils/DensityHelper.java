@@ -163,10 +163,18 @@ public class DensityHelper {
      * @param value 需要转换的dp值
      * @return
      */
-    public static float dp2px(Context context, float value){
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, context.getResources().getDisplayMetrics());
-    }
+//    public static float dp2px(Context context, float value){
+//        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, context.getResources().getDisplayMetrics());
+//    }
 
+    /**
+     * 根据手机的分辨率从 dp 的单位 转成为 px(像素)
+     */
+    public static int dp2px(Context context, float dpValue)
+    {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
+    }
     /**
      * 转换pt为px
      * @param context

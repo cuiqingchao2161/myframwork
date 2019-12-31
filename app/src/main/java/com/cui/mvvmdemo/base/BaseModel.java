@@ -1,8 +1,9 @@
 package com.cui.mvvmdemo.base;
 
-import android.databinding.BaseObservable;
 
 import java.io.Serializable;
+
+import androidx.databinding.BaseObservable;
 
 /**
  * Created by Administrator on 2018/11/24.

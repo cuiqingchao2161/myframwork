@@ -10,7 +10,7 @@
         <variable name="callback"
                   type="com.cui.mvvmdemo.viewmodel.NewsItemClickCallback"/>
     </data>
-    <android.support.v7.widget.CardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
@@ -47,5 +47,5 @@
                 android:singleLine="true"
                 android:padding="4dp"
                 android:text="@{newsItem.who}"/>
-    </android.support.v7.widget.CardView>
+    </androidx.cardview.widget.CardView>
 </layout>

@@ -5,8 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -21,14 +19,17 @@ import android.widget.ProgressBar;
 
 import com.bumptech.glide.Glide;
 import com.cui.mvvmdemo.R;
-import com.cui.mvvmdemo.base.BaseActivity;
 import com.cui.mvvmdemo.bean.Girl;
 import com.cui.mvvmdemo.utils.ImageUtil;
 import com.cui.mvvmdemo.utils.NewStatusBarUtil;
 import com.cui.mvvmdemo.widgets.zoomableImageView.ZoomableImageView;
+import com.hiscene.presentation.ui.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 /**
  * Created by Administrator on 2018/12/15.
@@ -57,24 +58,6 @@ public class BigimgshowActivity extends BaseActivity {
     public BigimgshowActivity() {
     }
 
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-    }
-
-    protected void hideSoftKeyboard() {
-        if(this.getWindow().getAttributes().softInputMode != 2 && this.getCurrentFocus() != null) {
-            this.inputMethodManager.hideSoftInputFromWindow(this.getCurrentFocus().getWindowToken(), 2);
-        }
-
-    }
-
-    public void back(View view) {
-        this.finish();
-    }
-
     protected void showProgressDialog(Context context, String msg) {
         this.mProgressDialog = this.mProgressDialog == null?new ProgressDialog(context):this.mProgressDialog;
         this.mProgressDialog.setTitle((CharSequence)null);
@@ -82,65 +65,6 @@ public class BigimgshowActivity extends BaseActivity {
         this.mProgressDialog.setCancelable(true);
         this.mProgressDialog.show();
     }
-
-    protected void showProgressDialog(Context context) {
-        this.showProgressDialog(context, "请稍等...");
-    }
-
-    protected void dismissProgressDialog() {
-        if(this.mProgressDialog != null && this.mProgressDialog.isShowing()) {
-            this.mProgressDialog.dismiss();
-        }
-
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        NewStatusBarUtil.transparencyBar(this);
-        setContentView(R.layout.layout_bigimgshow_activity);
-        process();
-
-        if(!this.isTaskRoot()) {
-            Intent intent = this.getIntent();
-            String action = intent.getAction();
-            if(intent.hasCategory("android.intent.category.LAUNCHER") && action.equals("android.intent.action.MAIN")) {
-                this.finish();
-                return;
-            }
-        }
-
-//        this.inputMethodManager = (InputMethodManager)this.getSystemService("input_method");
-
-        imageInfoList = new ArrayList<>();
-
-        image = (ZoomableImageView) findViewById(R.id.image);
-        image.setVisibility(View.GONE);
-        viewPager = (ViewPager) findViewById(R.id.pager);
-        viewPager.setVisibility(View.VISIBLE);
-
-        loadLocalPb = (ProgressBar) findViewById(R.id.pb_load_local);
-        default_res = getIntent().getIntExtra("default_image", R.mipmap.zhaoxi);
-        mBackBtn = (Button) findViewById(R.id.btn_activity_title_layout_back);
-//        mRightBtn = (Button) findViewById(R.id.btn_activity_title_layout_menu);
-//        titleName = (TextView) findViewById(R.id.tv_activity_title_layout_title);
-
-        mBackBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                back(null);
-            }
-        });
-
-//        mRightBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//            }
-//        });
-        getNewIntentData();
-    }
-
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -306,6 +230,63 @@ public class BigimgshowActivity extends BaseActivity {
             setResult(RESULT_OK);
         }
         finish();
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.layout_bigimgshow_activity;
+    }
+
+    @Override
+    protected void initView() {
+
+        if(!this.isTaskRoot()) {
+            Intent intent = this.getIntent();
+            String action = intent.getAction();
+            if(intent.hasCategory("android.intent.category.LAUNCHER") && action.equals("android.intent.action.MAIN")) {
+                this.finish();
+                return;
+            }
+        }
+
+        imageInfoList = new ArrayList<>();
+
+        image = (ZoomableImageView) findViewById(R.id.image);
+        image.setVisibility(View.GONE);
+        viewPager = (ViewPager) findViewById(R.id.pager);
+        viewPager.setVisibility(View.VISIBLE);
+
+        loadLocalPb = (ProgressBar) findViewById(R.id.pb_load_local);
+        default_res = getIntent().getIntExtra("default_image", R.mipmap.zhaoxi);
+        mBackBtn = (Button) findViewById(R.id.btn_activity_title_layout_back);
+        mBackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        getNewIntentData();
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
+    protected void requestData() {
+
+    }
+
+    @Override
+    protected void refreshView() {
+
     }
 
     public class ImgAdapter extends PagerAdapter {

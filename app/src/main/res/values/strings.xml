@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">MVVMDemo</string>
+
+    //dialog
+    <string name="tips">提示</string>
+    <string name="permission_dialog_title">权限申请</string>
+    <string name="permission_dialog_message">为了您能正常使用，需要以下权限</string>
+    <string name="ok">确定</string>
+    <string name="toast_message">Toast message</string>
+    <string name="requesting_connection">正在连接&#8230;</string>
+    <string name="connection_broken">连接断开</string>
+    <string name="connection_failed">连接失败</string>
+    <string name="good">好的</string>
+    <string name="requesting_reconnection">重连中&#8230;</string>
+
+    //LoadingDialog
+    <string name="login_out_loading">正在登出&#8230;</string>
+    <string name="login_out_failed">登出失败&#8230;</string>
+    <string name="update_profile_loading">正在更新头像&#8230;</string>
+    <string name="update_profile_failed">更新头像失败</string>
+    <string name="update_profile_successed">更新头像成功</string>
+    <string name="profile_load_failed">头像加载失败</string>
+
+    //权限
+    <string name="button_allow">允许</string>
+    <string name="button_deny">拒绝</string>
+    <string name="permission_denied">申请相关权限被拒绝</string>
+    <string name="permission_never_ask_again">相关权限禁止无法再使用应用</string>
+    <string name="permission_rationale">应用需要开启相关权限</string>
+
+    <string name="label_backstage">MVVMDemo应用转换到后台运行</string>
 </resources>

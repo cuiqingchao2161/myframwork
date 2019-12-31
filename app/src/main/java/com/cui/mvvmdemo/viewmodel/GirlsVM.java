@@ -1,6 +1,7 @@
 package com.cui.mvvmdemo.viewmodel;
 
-import android.arch.lifecycle.ViewModel;
+
+import androidx.lifecycle.ViewModel;
 
 /**
  * Created by Administrator on 2018/12/13.

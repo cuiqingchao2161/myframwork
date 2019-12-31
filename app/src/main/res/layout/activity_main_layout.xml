@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mContentRl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:paddingTop="22dp">
+
+    <RadioGroup
+        android:id="@+id/main_tab_rg"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbtn_main_msg_tab"
+            style="@style/main_tab_radio_btn_style"
+            android:drawableTop="@drawable/main_tab_msg_selector"
+            android:text="消息" />
+
+        <RadioButton
+            android:id="@+id/rbtn_main_contacts_tab"
+            style="@style/main_tab_radio_btn_style"
+            android:drawableTop="@drawable/main_tab_contact_selector"
+            android:text="联系人" />
+
+        <RadioButton
+            android:id="@+id/rbtn_main_workbench_tab"
+            style="@style/main_tab_radio_btn_style"
+            android:drawableTop="@drawable/main_tab_workbench_selector"
+            android:text="工作台" />
+
+        <RadioButton
+            android:id="@+id/rbtn_main_more_tab"
+            style="@style/main_tab_radio_btn_style"
+            android:drawableTop="@drawable/main_tab_more_selector"
+            android:text="更多" />
+    </RadioGroup>
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/main_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:transitionName="transitonName1"
+        android:layout_above="@id/main_tab_rg" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_above="@id/main_tab_rg"
+        android:layout_centerHorizontal="true"
+        android:text="切换至导航"
+        android:onClick="clickButton"/>
+</RelativeLayout>

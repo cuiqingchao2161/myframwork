@@ -1,15 +1,10 @@
 package com.cui.mvvmdemo.viewmodel;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.Transformations;
 import android.content.Context;
-import android.databinding.ObservableField;
-import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.cui.lib.toast.ToastUtils;
 import com.cui.mvvmdemo.base.BaseLoadListener;
 import com.cui.mvvmdemo.bean.NewsData;
 import com.cui.mvvmdemo.bean.SimpleNewsBean;
@@ -18,10 +13,16 @@ import com.cui.mvvmdemo.http.HttpUtils;
 import com.cui.mvvmdemo.http.NetUtils;
 import com.cui.mvvmdemo.model.INewsModel;
 import com.cui.mvvmdemo.model.NewsModelImpl;
-import com.cui.mvvmdemo.utils.ToastUtils;
 
 import java.util.List;
 
+import androidx.annotation.NonNull;
+import androidx.arch.core.util.Function;
+import androidx.databinding.ObservableField;
+import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.Transformations;
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -93,7 +94,7 @@ public class NewsVM extends AndroidViewModel {
                     //加载失败需要回到加载之前的页数
                     currPage--;
                 }
-                ToastUtils.show(mContext,message);
+                ToastUtils.show(message);
 //        mNewsView.loadFailure(message);
             }
 
@@ -110,7 +111,7 @@ public class NewsVM extends AndroidViewModel {
     }
 
     public void getData(){
-        mLiveObservableData = Transformations.switchMap(NetUtils.netConnected(mApplication), new android.arch.core.util.Function<Boolean, LiveData<NewsData>>() {
+        mLiveObservableData = Transformations.switchMap(NetUtils.netConnected(mApplication), new Function<Boolean, LiveData<NewsData>>() {
             @Override
             public LiveData<NewsData> apply(Boolean isNetConnected) {
 

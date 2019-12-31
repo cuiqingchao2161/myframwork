@@ -424,4 +424,35 @@
     <dimen name="sp_42">42sp</dimen>
     <dimen name="sp_48">48sp</dimen>
 
+
+    <!-- ==================权限申请对话框（alertdialog）================== -->
+    <!-- 对话框的圆角角度 -->
+    <dimen name="permission_dialog_corners">8dp</dimen>
+    <!-- 对话框的整体外边距 -->
+    <dimen name="permission_dialog_margin">50dp</dimen>
+    <!-- 对话框的整体外边距 -->
+    <dimen name="permission_dialog_margin_start">20dp</dimen>
+    <!-- 对话框的标题内边距 -->
+    <dimen name="permission_dialog_title_padding">8dp</dimen>
+    <!-- 对话框的标题文本大小 -->
+    <dimen name="permission_dialog_title_text_size">18sp</dimen>
+    <!-- 对话框的描述文本大小 -->
+    <dimen name="permission_dialog_message_text_size">16sp</dimen>
+    <!-- 对话框的按钮内边距 -->
+    <dimen name="permission_dialog_btn_padding">8dp</dimen>
+    <!-- 对话框的按钮大小 -->
+    <dimen name="permission_dialog_btn_text_size">16sp</dimen>
+
+
+    <dimen name="jumbo_text_size">24sp</dimen><!-- 特大字体大小 -->
+    <dimen name="big_text_size">20sp</dimen><!-- 大字体大小 -->
+    <dimen name="title_text_size">18sp</dimen><!-- 标题字体大小 -->
+    <dimen name="normal_text_size">16sp</dimen><!-- 通常字体大小 -->
+    <dimen name="medium_text_size">14sp</dimen><!-- 中等字体大小 -->
+    <dimen name="small_text_size">12sp</dimen><!-- 小号字体大小 -->
+    <dimen name="extra_small_text_size">10sp</dimen><!-- 小号字体大小 -->
+    <dimen name="guide_text_title_size">26sp</dimen>
+    <dimen name="guide_text_content_size">16sp</dimen>
+    <dimen name="list_item_msg_text_size">14sp</dimen>
+    <dimen name="list_item_time_text_size">12sp</dimen>
 </resources>

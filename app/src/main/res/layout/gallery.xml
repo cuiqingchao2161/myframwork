@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clipChildren="false"
+    android:gravity="center"
+    android:layerType="software">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/gallery"
+        android:layout_width="200dp"
+        android:layout_height="340dp"/>
+</LinearLayout>

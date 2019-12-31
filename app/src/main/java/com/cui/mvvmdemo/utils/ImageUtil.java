@@ -1,15 +1,10 @@
 package com.cui.mvvmdemo.utils;
 
-import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.Configuration;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.support.v4.graphics.drawable.DrawableCompat;
-import android.text.TextUtils;
 import android.widget.ImageView;
 
 import com.bumptech.glide.load.DecodeFormat;
@@ -17,9 +12,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.cui.mvvmdemo.R;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.util.Hashtable;
+
+import androidx.core.graphics.drawable.DrawableCompat;
 
 /**
  * Created by qingchao.cui on 2019/3/22.

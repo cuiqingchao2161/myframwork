@@ -1,9 +1,10 @@
 package com.cui.mvvmdemo.helper;
 
-import android.databinding.BindingAdapter;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+
+import androidx.databinding.BindingAdapter;
 
 /**
  * 作者： 周旭 on 2017年10月17日 0017.

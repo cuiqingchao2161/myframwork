@@ -1,12 +1,13 @@
 package com.cui.mvvmdemo.base;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * 作者： 周旭 on 2017年10月17日 0017.

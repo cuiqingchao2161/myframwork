@@ -1,18 +1,12 @@
 package com.cui.mvvmdemo.view;
 
-import android.arch.lifecycle.LifecycleRegistry;
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
-import android.databinding.DataBindingUtil;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.cui.mvvmdemo.R;
 import com.cui.mvvmdemo.adapter.GirlsAdapter;
 import com.cui.mvvmdemo.adapter.NewAdapter;
-import com.cui.mvvmdemo.base.BaseActivity;
 import com.cui.mvvmdemo.bean.Girl;
 import com.cui.mvvmdemo.bean.NewsData;
 import com.cui.mvvmdemo.databinding.ActivityMainBinding;
@@ -22,9 +16,17 @@ import com.cui.mvvmdemo.viewmodel.MainVM;
 import com.cui.mvvmdemo.viewmodel.NewsItemClickCallback;
 import com.cui.mvvmdemo.viewmodel.NewsVM;
 import com.cui.mvvmdemo.viewmodel.TestLifecycleObserver;
+import com.hiscene.presentation.ui.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.LifecycleRegistry;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
 
 
 public class GirlsActivity extends BaseActivity {
@@ -34,38 +36,6 @@ public class GirlsActivity extends BaseActivity {
     private TestLifecycleObserver testLifecycleObserver;
     private LifecycleRegistry mLifecycleRegistry;
     private List<Girl> mGirlList;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        NewStatusBarUtil.transparencyBar(this);
-        setContentView( R.layout.activity_main);
-        process();
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        mLifecycleRegistry = new LifecycleRegistry(this);
-        this.mLifecycleRegistry.markState(android.arch.lifecycle.Lifecycle.State.CREATED);
-        MainVM mainVM = ViewModelProviders.of(this).get(MainVM.class);
-        NewsVM newsVM = ViewModelProviders.of(this).get(NewsVM.class);
-        GirlsVM girlsVM = ViewModelProviders.of(this).get(GirlsVM.class);
-
-        mGirlList = new ArrayList<>();
-        initGirlsData();
-        newAdapter = new NewAdapter(girlItemClickCallback);
-        girlsAdapter = new GirlsAdapter(this,mGirlList);
-        binding.newsList.setAdapter(girlsAdapter);
-
-
-//        subscribeToModel(newsVM);
-//        newsVM.getLiveData().observe(this, new Observer() {
-//            @Override
-//            public void onChanged(@Nullable Object o) {
-//                List<SimpleNewsBean> beans = (List<SimpleNewsBean>) o;
-//                newsAdapter.refreshData(beans);
-//            }
-//        });
-//        newsVM.loadRefreshData();
-
-    }
 
     private void initGirlsData(){
         Girl girl1 = new Girl("崔莹莹","模特，180cm,爱好健身跑步","file:///android_asset/1.jpg");
@@ -121,4 +91,44 @@ public class GirlsActivity extends BaseActivity {
     }
 
 
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initView() {
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        mLifecycleRegistry = new LifecycleRegistry(this);
+        this.mLifecycleRegistry.markState(Lifecycle.State.CREATED);
+        MainVM mainVM = ViewModelProviders.of(this).get(MainVM.class);
+        NewsVM newsVM = ViewModelProviders.of(this).get(NewsVM.class);
+        GirlsVM girlsVM = ViewModelProviders.of(this).get(GirlsVM.class);
+
+        mGirlList = new ArrayList<>();
+        initGirlsData();
+        newAdapter = new NewAdapter(girlItemClickCallback);
+        girlsAdapter = new GirlsAdapter(this,mGirlList);
+        binding.newsList.setAdapter(girlsAdapter);
+    }
+
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void initListener() {
+
+    }
+
+    @Override
+    protected void requestData() {
+
+    }
+
+    @Override
+    protected void refreshView() {
+
+    }
 }

@@ -71,7 +71,7 @@ public class NewsVM extends AndroidViewModel {
      * 第一次获取新闻数据
      */
     private void getNewsData() {
-        loadType = MainConstant.LoadData.FIRST_LOAD;
+        loadType = MainConstant.LoadData.INSTANCE.getFIRST_LOAD();
         mNewsModel.loadNewsData(currPage, new BaseLoadListener<SimpleNewsBean>() {
             @Override
             public void loadSuccess(List<SimpleNewsBean> list) {
@@ -152,7 +152,7 @@ public class NewsVM extends AndroidViewModel {
      * 获取下拉刷新的数据
      */
     public void loadRefreshData() {
-        loadType = MainConstant.LoadData.REFRESH;
+        loadType = MainConstant.LoadData.INSTANCE.getREFRESH();
         currPage = 1;
 //        mNewsModel.loadNewsData(currPage, this);
     }
@@ -161,7 +161,7 @@ public class NewsVM extends AndroidViewModel {
      * 获取上拉加载更多的数据
      */
     public void loadMoreData() {
-        loadType = MainConstant.LoadData.LOAD_MORE;
+        loadType = MainConstant.LoadData.INSTANCE.getLOAD_MORE();
         currPage++;
 //        mNewsModel.loadNewsData(currPage, this);
     }

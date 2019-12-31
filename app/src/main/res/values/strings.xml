@@ -29,4 +29,12 @@
     <string name="permission_rationale">应用需要开启相关权限</string>
 
     <string name="label_backstage">MVVMDemo应用转换到后台运行</string>
+
+
+    //文件收发
+    <string name="file_normal">常用文件</string>
+    <string name="file_all">全部文件</string>
+    <string name="empty_data">没有数据</string>
+    <string name="not_available">sd卡不可用</string>
+    <string name="label_filemanager_empty">没有文件</string>
 </resources>

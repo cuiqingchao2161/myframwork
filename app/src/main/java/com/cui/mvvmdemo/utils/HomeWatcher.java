@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.util.Log;
 
+import com.cui.lib.util.DeviceUtil;
+
 
 /**
  *

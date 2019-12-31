@@ -455,4 +455,6 @@
     <dimen name="guide_text_content_size">16sp</dimen>
     <dimen name="list_item_msg_text_size">14sp</dimen>
     <dimen name="list_item_time_text_size">12sp</dimen>
+
+    <dimen name="divide_height_size">1dp</dimen>
 </resources>

@@ -1,7 +1,9 @@
 package com.hiscene.presentation.navigation
 
 import android.app.Activity
+import android.content.Intent
 import com.cui.mvvmdemo.R
+import com.cui.mvvmdemo.filebrowser.ui.ImageDetailsActivity
 
 /**
  * description : activity跳转至新页面
@@ -17,6 +19,13 @@ class Navigator internal constructor() {
             context?.overridePendingTransition(R.anim.activity_in_enter, R.anim.activity_in_exit)
         }
 
+        fun navigationImageDetail(context: Activity?, position: Int) {
+            if (context != null) {
+                val intent = Intent(context, ImageDetailsActivity::class.java)
+                intent.putExtra("image_position", position)
+                context.startActivity(intent)
+            }
+        }
 //        fun navigateToMain(context: Activity?, button: NbButton, view: View) {
 //            if (context != null) {
 //                val intent = Intent(context, MainActivity::class.java)

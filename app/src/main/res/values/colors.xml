@@ -94,4 +94,47 @@
     <color name="button_normal_color">#334F63E1</color>
     <color name="button_activated_color">#8F334BDD</color>
     <color name="color_primary_dark">#4D68D5</color>
+
+    <color name="file_picker_title">#4A4A4A</color>
+    <color name="file_picker_des">#86848B</color>
+    <color name="file_bottom_line">#ECECEC</color>
+    <color name="file_picker_bg">#f9f9f9</color>
+    <color name="color_message_title">#0079ff</color>
+    <color name="color_message_bg">#4c000000</color>
+    <color name="color_message_info">#ffffffff</color>
+    <color name="color_message_warning">#FF5722</color>
+    <color name="color_message_error">#ffff0000</color>
+    <color name="color_switch_mode_hint">#009DFF</color>
+    <color name="color_welcome_bg">#8C000000</color>
+    <color name="color_welcome_hint">#7fffffff</color>
+    <color name="color_list_divider">#fff4f4f4</color>
+    <color name="color_list_selected_contact_divider">#ffe4e4e4</color>
+
+    <color name="blue_color_level_0">#3191D8</color>
+    <color name="blue_color_level_1">#0195ff</color>
+    <color name="blue_color_level_2">#334bdd</color>
+    <color name="blue_color_level_3">#4266f5</color>
+    <color name="blue_color_level_4">#4058e1</color>
+    <color name="blue_color_level_5">#AAC8FF</color>
+    <color name="blue_color_level_6">#0529FC</color>
+    <color name="blue_color_level_7">#0B03E6</color>
+    <color name="gray_color_level_0">#f4f4f4</color>
+    <color name="gray_color_level_1">#dddddd</color>
+    <color name="gray_color_level_2">#bbbbbb</color>
+    <color name="gray_color_level_3">#999999</color>
+    <color name="gray_color_level_4">#666666</color>
+    <color name="gray_color_level_5">#333333</color>
+    <color name="gray_color_level_6">#2f333333</color>
+    <color name="gray_color_level_7">#afffffff</color>
+
+    <color name="window_background_light">#ffeeeeee</color>
+    <color name="window_background_dark">#ff303030</color>
+
+    <color name="white_color">#ffffff</color>
+    <color name="black_color">#000000</color>
+    <color name="black_color_light">#222222</color>
+    <color name="red_color">#E21C1C</color>
+    <color name="blue_color">#3891F2</color>
+    <color name="blue_check_color">#909dec</color>
+    <color name="editbox_line_color">#8F334BDD</color>
 </resources>

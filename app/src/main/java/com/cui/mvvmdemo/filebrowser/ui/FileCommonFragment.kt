@@ -1,4 +1,4 @@
-package com.hiscene.presentation.filebrowser.ui
+package com.cui.mvvmdemo.filebrowser.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -14,8 +14,8 @@ import com.cui.mvvmdemo.constant.MainConstant.MAX_FILE_SIZE
 import com.cui.mvvmdemo.constant.MainConstant.PIC_PATH
 import com.cui.mvvmdemo.filebrowser.entity.FileEntity
 import com.cui.mvvmdemo.filebrowser.viewmodel.FilePickerViewModel
-import com.hiscene.presentation.filebrowser.ui.adapter.ReceiveFileShowAdapter
-import com.hiscene.presentation.ui.base.BaseFragment
+import com.cui.mvvmdemo.filebrowser.ui.adapter.ReceiveFileShowAdapter
+import com.cui.mvvmdemo.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_file_normal.*
 
 /**

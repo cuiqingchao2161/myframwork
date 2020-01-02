@@ -1,6 +1,7 @@
-package com.hiscene.presentation.filebrowser.ui.adapter
+package com.cui.mvvmdemo.filebrowser.ui.adapter
 
 import android.content.Context
+import android.media.SoundPool
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,9 +23,14 @@ import java.util.*
 class ReceiveFileShowAdapter(private val mContext: Context?, dataList: List<FileEntity>) : RecyclerView.Adapter<ReceiveFileShowAdapter.FileShowViewHolder>() {
     private val mDataList: ArrayList<FileEntity>
     private var mOnItemClickListener: OnFileItemClickListener? = null
+    private var mOnItemLongClickListener: OnFileItemLongClickListener? = null
 
-    fun setOnItemClickListener(mOnItemClickListener: OnFileItemClickListener) {
-        this.mOnItemClickListener = mOnItemClickListener
+    fun setOnItemClickListener(onFileItemClickListener: OnFileItemClickListener) {
+        this.mOnItemClickListener = onFileItemClickListener
+    }
+
+    fun setOnItemLongClickListener(onItemLongClickListener:OnFileItemLongClickListener){
+        mOnItemLongClickListener = onItemLongClickListener
     }
 
     init {
@@ -67,8 +73,15 @@ class ReceiveFileShowAdapter(private val mContext: Context?, dataList: List<File
             }
         }
 
+        holder.itemView.setOnLongClickListener {
+            mOnItemLongClickListener?.let {
+                mOnItemLongClickListener!!.longClick(holder.adapterPosition)
+            }
+            true
+        }
+
         holder.itemView.setOnClickListener {
-            if (mOnItemClickListener != null) {
+            mOnItemClickListener?.let {
                 mOnItemClickListener!!.click(holder.adapterPosition)
             }
         }
@@ -86,5 +99,9 @@ class ReceiveFileShowAdapter(private val mContext: Context?, dataList: List<File
     inner class FileShowViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     interface OnFileItemClickListener {
         fun click(position: Int)
+    }
+
+    interface OnFileItemLongClickListener {
+        fun longClick(position: Int)
     }
 }

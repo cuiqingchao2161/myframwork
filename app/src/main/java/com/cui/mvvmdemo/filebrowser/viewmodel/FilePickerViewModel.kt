@@ -9,7 +9,7 @@ import com.cui.mvvmdemo.bean.ReqResult
 import com.cui.mvvmdemo.constant.MainConstant
 import com.cui.mvvmdemo.filebrowser.entity.FileEntity
 import com.cui.mvvmdemo.filebrowser.utils.FileUtils
-import com.hiscene.presentation.ui.base.BaseViewModel
+import com.cui.mvvmdemo.ui.base.BaseViewModel
 import io.reactivex.Observable
 import io.reactivex.ObservableOnSubscribe
 import io.reactivex.android.schedulers.AndroidSchedulers

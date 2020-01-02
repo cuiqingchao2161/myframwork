@@ -2,7 +2,7 @@ package com.cui.mvvmdemo.demos.navigation_threed
 
 import androidx.recyclerview.widget.GridLayoutManager
 import com.cui.mvvmdemo.R
-import com.hiscene.presentation.ui.base.BaseFragment
+import com.cui.mvvmdemo.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_workbench.*
 
 

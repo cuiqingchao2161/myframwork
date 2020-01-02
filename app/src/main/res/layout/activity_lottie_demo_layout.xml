@@ -1,15 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <Button
+        android:id="@+id/btn_select_json_file"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/dp_30"
+        style="@style/btn_common_style"
+        android:text="选择json文件"/>
+
+    <Button
+        android:id="@+id/btn_select_images_file"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_select_json_file"
+        android:layout_margin="@dimen/dp_30"
+        style="@style/btn_common_style"
+        android:text="选择images文件"/>
+
+    <Button
+        android:id="@+id/btn_start_load"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_select_images_file"
+        android:layout_margin="@dimen/dp_30"
+        style="@style/btn_common_style"
+        android:text="开始加载"/>
 
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottieAnimationView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:lottie_fileName="13223-student.json"
         app:lottie_loop="true"
         app:lottie_autoPlay="true"
+        app:layout_constraintTop_toBottomOf="@+id/btn_start_load"
+        app:layout_constraintBottom_toTopOf="@+id/tv_file_json_path"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         />
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_file_json_path"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        style="@style/tv_common_style"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tv_file_images_path"
+        android:layout_marginTop="@dimen/dp_20"
+        tools:text="json path:"/>
+
+    <TextView
+        android:id="@+id/tv_file_images_path"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        style="@style/tv_common_style"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="images path:"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

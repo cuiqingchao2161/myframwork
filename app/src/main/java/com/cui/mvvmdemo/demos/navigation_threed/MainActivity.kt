@@ -13,7 +13,7 @@ import com.cui.mvvmdemo.demos.threed_gallery.MainActivity
 import com.cui.mvvmdemo.demos.threed_gallery.Rotate3dAnimation
 import com.cui.mvvmdemo.utils.DrawableUtil
 import com.cui.mvvmdemo.widgets.MainViewPagerAdapter
-import com.hiscene.presentation.ui.base.BaseFragment
+import com.cui.mvvmdemo.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.activity_main_layout.*
 
 /**

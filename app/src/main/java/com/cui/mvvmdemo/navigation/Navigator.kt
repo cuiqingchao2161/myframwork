@@ -1,9 +1,10 @@
-package com.hiscene.presentation.navigation
+package com.cui.mvvmdemo.navigation
 
 import android.app.Activity
 import android.content.Intent
 import com.cui.mvvmdemo.R
 import com.cui.mvvmdemo.filebrowser.ui.ImageDetailsActivity
+import com.cui.mvvmdemo.filebrowser.ui.FilePickerActivity
 
 /**
  * description : activity跳转至新页面
@@ -26,6 +27,16 @@ class Navigator internal constructor() {
                 context.startActivity(intent)
             }
         }
+
+        fun navigateToFilePicker(context: Activity?,requestCode:Int) {
+            if (!(context == null || context.isDestroyed || context.isFinishing)) {
+                var intent = Intent(context, FilePickerActivity::class.java)
+                context.startActivityForResult(intent, requestCode)
+                navigateAnimCommon(context)
+            }
+        }
+
+
 //        fun navigateToMain(context: Activity?, button: NbButton, view: View) {
 //            if (context != null) {
 //                val intent = Intent(context, MainActivity::class.java)

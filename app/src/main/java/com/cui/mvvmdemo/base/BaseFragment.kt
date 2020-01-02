@@ -1,4 +1,4 @@
-package com.hiscene.presentation.ui.base
+package com.cui.mvvmdemo.ui.base
 
 import android.os.Bundle
 import android.util.Log

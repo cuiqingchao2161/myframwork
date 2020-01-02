@@ -23,7 +23,7 @@ import com.cui.mvvmdemo.bean.Girl;
 import com.cui.mvvmdemo.utils.ImageUtil;
 import com.cui.mvvmdemo.utils.NewStatusBarUtil;
 import com.cui.mvvmdemo.widgets.zoomableImageView.ZoomableImageView;
-import com.hiscene.presentation.ui.base.BaseActivity;
+import com.cui.mvvmdemo.ui.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;

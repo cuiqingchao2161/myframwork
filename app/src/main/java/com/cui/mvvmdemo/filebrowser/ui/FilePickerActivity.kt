@@ -1,4 +1,4 @@
-package com.hiscene.presentation.filebrowser.ui
+package com.cui.mvvmdemo.filebrowser.ui
 
 import android.app.Activity
 import android.os.Bundle
@@ -11,7 +11,9 @@ import androidx.fragment.app.FragmentTransaction
 import com.cui.mvvmdemo.R
 import com.cui.mvvmdemo.filebrowser.utils.PickerManager
 import com.cui.mvvmdemo.listener.NavigationFinishClickListener
-import com.hiscene.presentation.ui.base.BaseActivity
+import com.cui.mvvmdemo.filebrowser.ui.FileAllFragment
+import com.cui.mvvmdemo.filebrowser.ui.FileCommonFragment
+import com.cui.mvvmdemo.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_file_picker.*
 import kotlinx.android.synthetic.main.include_toolbar_layout.*
 

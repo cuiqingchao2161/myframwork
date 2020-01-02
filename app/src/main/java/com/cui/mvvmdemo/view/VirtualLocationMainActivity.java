@@ -16,7 +16,7 @@ import com.cui.mvvmdemo.viewmodel.MainVM;
 import com.cui.mvvmdemo.viewmodel.NewsItemClickCallback;
 import com.cui.mvvmdemo.viewmodel.NewsVM;
 import com.cui.mvvmdemo.viewmodel.TestLifecycleObserver;
-import com.hiscene.presentation.ui.base.BaseActivity;
+import com.cui.mvvmdemo.ui.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;

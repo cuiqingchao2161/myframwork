@@ -1,4 +1,4 @@
-package com.hiscene.presentation.ui.base
+package com.cui.mvvmdemo.ui.base
 
 
 import android.Manifest
@@ -18,7 +18,7 @@ import com.cui.mvvmdemo.utils.NewStatusBarUtil
 import com.cui.mvvmdemo.utils.PermissionUtil
 import com.cui.mvvmdemo.widgets.dialog.LoadingDialog
 import com.cui.mvvmdemo.widgets.dialog.PermissionDialog
-import com.hiscene.presentation.navigation.NavigatorBack
+import com.cui.mvvmdemo.navigation.NavigatorBack
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.internal.operators.observable.ObservableJust
 import java.util.concurrent.TimeUnit
@@ -30,7 +30,7 @@ import java.util.concurrent.TimeUnit
  */
 
 abstract class BaseActivity : AppCompatActivity() , PermissionUtil.PermissionResultCallBack  {
-    protected open var TAG = "BaseActivity"
+    public open var TAG = "BaseActivity"
     private var mHomeWatcher: HomeWatcher? = null
     var isInRecentTask = false
     var isResume = false

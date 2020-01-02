@@ -11,8 +11,8 @@ import com.cui.mvvmdemo.demos.threed_gallery.ZoomOutPageTransformer
 import com.cui.mvvmdemo.filebrowser.entity.FileEntity
 import com.cui.mvvmdemo.listener.NavigationFinishClickListener
 import com.cui.mvvmdemo.widgets.ZoomImageView
-import com.hiscene.presentation.filebrowser.ui.FileReceiveActivity
-import com.hiscene.presentation.ui.base.BaseActivity
+import com.cui.mvvmdemo.filebrowser.ui.FileReceiveActivity
+import com.cui.mvvmdemo.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.image_details.*
 import kotlinx.android.synthetic.main.include_toolbar_layout.*
 

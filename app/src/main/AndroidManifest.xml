@@ -61,8 +61,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
-            android:name="com.com.cui.mvvmdemo.configs.MyGlideModule"
-            android:value="GlideModule" />
+            android:name="com.cui.lib.util.glide.HiGlideModule"
+            android:value="AppGlideModule" />
 
          <activity android:name="com.cui.mvvmdemo.demos.lottie_animation_view.LottieDemoActivity"
              android:launchMode="singleTask">
@@ -74,8 +74,8 @@
 
         <activity android:name=".demos.threed_gallery.MainActivity" />
         <activity android:name=".view.BigimgshowActivity" />
-        <activity android:name=".view.WebActivity">
-        </activity>
+        <activity android:name=".view.WebActivity"/>
+        <activity android:name=".filebrowser.ui.FilePickerActivity"/>
 
         <service
             android:name="com.cui.aidl.service.MyService"

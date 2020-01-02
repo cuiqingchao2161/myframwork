@@ -1,4 +1,4 @@
-package com.hiscene.presentation.filebrowser.ui
+package com.cui.mvvmdemo.filebrowser.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -15,8 +15,8 @@ import com.cui.mvvmdemo.constant.MainConstant
 import com.cui.mvvmdemo.filebrowser.entity.FileEntity
 import com.cui.mvvmdemo.filebrowser.utils.FileSelectFilter
 import com.cui.mvvmdemo.filebrowser.viewmodel.FilePickerViewModel
-import com.hiscene.presentation.filebrowser.ui.adapter.ReceiveFileShowAdapter
-import com.hiscene.presentation.ui.base.BaseFragment
+import com.cui.mvvmdemo.filebrowser.ui.adapter.ReceiveFileShowAdapter
+import com.cui.mvvmdemo.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_file_all.*
 import java.io.File
 
@@ -70,6 +70,30 @@ class FileAllFragment : BaseFragment() {
             mPath = tempPath
             requestData()
         })
+
+        mAllFileAdapter?.setOnItemLongClickListener(object : ReceiveFileShowAdapter.OnFileItemLongClickListener {
+            override fun longClick(position: Int) {
+
+                if (mFileInfos != null && mFileInfos.size > position && mFileInfos[position].file != null) {
+                    val entity = mFileInfos[position]
+                    //如果是文件夹点击进入文件夹
+                    if (entity.file.isDirectory) {
+                        if (entity.file.length() < MainConstant.MAX_FILE_SIZE) {
+                            val intent = Intent()
+                            intent.putExtra("path", entity.path)
+                            activity!!.setResult(Activity.RESULT_OK, intent)
+                            activity!!.finish()
+                        } else {
+                            ToastUtils.show("所选文件不能超过50M")
+                        }
+                    }
+                }
+
+            }
+
+        })
+
+
         mAllFileAdapter?.setOnItemClickListener(object : ReceiveFileShowAdapter.OnFileItemClickListener {
             override fun click(position: Int) {
 

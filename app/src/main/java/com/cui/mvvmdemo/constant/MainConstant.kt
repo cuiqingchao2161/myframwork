@@ -27,6 +27,7 @@ object MainConstant {
     const val STATUS_RECYCLE = -1   //成功
 
     const val MAX_FILE_SIZE = 50 * 1024 * 1024
-
+    const val CHOOSE_JSON_REQUEST_CODE = 666
+    const val CHOOSE_IMAGES_REQUEST_CODE = 888
 
 }

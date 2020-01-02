@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.PagerAdapter
-import com.hiscene.presentation.ui.base.BaseFragment
+import com.cui.mvvmdemo.ui.base.BaseFragment
 import java.util.*
 
 /*

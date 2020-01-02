@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+<!--            <stroke android:width="3dp" android:color="@color/blue" />&lt;!&ndash;边框颜色&ndash;&gt;-->
+            <solid android:color="@color/button_activated_color" /><!--填充色-->
+            <corners android:radius="5dp" />
+        </shape>
+    </item>
+</layer-list>

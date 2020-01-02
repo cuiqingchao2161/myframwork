@@ -1,4 +1,4 @@
-package com.hiscene.presentation.filebrowser.ui
+package com.cui.mvvmdemo.filebrowser.ui
 
 //import kotlinx.android.synthetic.main.activity_album.*
 import android.view.View
@@ -12,9 +12,9 @@ import com.cui.mvvmdemo.filebrowser.entity.FileEntity
 import com.cui.mvvmdemo.filebrowser.utils.OpenFile
 import com.cui.mvvmdemo.filebrowser.viewmodel.FilePickerViewModel
 import com.cui.mvvmdemo.listener.NavigationFinishClickListener
-import com.hiscene.presentation.filebrowser.ui.adapter.ReceiveFileShowAdapter
-import com.hiscene.presentation.navigation.Navigator
-import com.hiscene.presentation.ui.base.BaseActivity
+import com.cui.mvvmdemo.filebrowser.ui.adapter.ReceiveFileShowAdapter
+import com.cui.mvvmdemo.navigation.Navigator
+import com.cui.mvvmdemo.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_file_receive.*
 import kotlinx.android.synthetic.main.include_toolbar_layout.*
 

@@ -1,4 +1,4 @@
-package com.hiscene.presentation.navigation
+package com.cui.mvvmdemo.navigation
 
 import android.app.Activity
 import android.content.Intent

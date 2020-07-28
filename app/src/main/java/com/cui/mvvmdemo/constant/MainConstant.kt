@@ -17,7 +17,7 @@ object MainConstant {
         val LOAD_MORE = 2 //上拉加载更多
     }
 
-    private val ROOT_PATH: String = MyApplication.getInstance()!!.getExternalFilesDir("")!!.absolutePath
+    private val ROOT_PATH: String = MyApplication.Companion.instance!!.getExternalFilesDir("")!!.absolutePath
     val DOWNLOAD_PATH = ROOT_PATH + File.separator + "download"
     val PIC_PATH = ROOT_PATH + File.separator + "Pictures"
 

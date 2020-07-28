@@ -61,10 +61,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <meta-data
-            android:name="com.cui.lib.util.glide.HiGlideModule"
+            android:name="com.cui.lib.utils.glide.HiGlideModule"
             android:value="AppGlideModule" />
 
-         <activity android:name="com.cui.mvvmdemo.demos.lottie_animation_view.LottieDemoActivity"
+         <activity android:name="com.cui.mvvmdemo.demos.gestureDetector.GestureDetectorDemoActivity"
              android:launchMode="singleTask">
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />
@@ -73,8 +73,8 @@
          </activity>
 
         <activity android:name=".demos.threed_gallery.MainActivity" />
-        <activity android:name=".view.BigimgshowActivity" />
-        <activity android:name=".view.WebActivity"/>
+        <activity android:name=".ui.activity.BigimgshowActivity" />
+        <activity android:name=".ui.activity.WebActivity"/>
         <activity android:name=".filebrowser.ui.FilePickerActivity"/>
 
         <service

@@ -44,6 +44,7 @@
         android:layout_height="wrap_content"
         app:lottie_loop="true"
         app:lottie_autoPlay="true"
+        app:lottie_fileName="data.json"
         app:layout_constraintTop_toBottomOf="@+id/btn_start_load"
         app:layout_constraintBottom_toTopOf="@+id/tv_file_json_path"
         app:layout_constraintStart_toStartOf="parent"

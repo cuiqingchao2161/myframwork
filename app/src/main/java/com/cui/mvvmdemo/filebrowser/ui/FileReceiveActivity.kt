@@ -14,7 +14,7 @@ import com.cui.mvvmdemo.filebrowser.viewmodel.FilePickerViewModel
 import com.cui.mvvmdemo.listener.NavigationFinishClickListener
 import com.cui.mvvmdemo.filebrowser.ui.adapter.ReceiveFileShowAdapter
 import com.cui.mvvmdemo.navigation.Navigator
-import com.cui.mvvmdemo.ui.base.BaseActivity
+import com.cui.mvvmdemo.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_file_receive.*
 import kotlinx.android.synthetic.main.include_toolbar_layout.*
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="30dp"
-    tools:context="com.cui.mvvmdemo.view.SampleActivity">
+    tools:context="com.cui.mvvmdemo.activity.SampleActivity">
 
     <Button
         android:id="@+id/vr_button"

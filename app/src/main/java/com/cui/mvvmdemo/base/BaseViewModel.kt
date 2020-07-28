@@ -1,10 +1,9 @@
-package com.cui.mvvmdemo.ui.base
+package com.cui.mvvmdemo.base
 
 
 import android.util.Log
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.ViewModel
-import com.cui.mvvmdemo.base.IViewModel
 
 /**
  * @author xujiangang

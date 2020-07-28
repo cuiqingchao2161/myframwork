@@ -12,7 +12,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.cui.mvvmdemo.R;
 
-
 import androidx.core.graphics.drawable.DrawableCompat;
 
 /**

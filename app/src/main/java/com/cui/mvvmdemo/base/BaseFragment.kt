@@ -1,4 +1,4 @@
-package com.cui.mvvmdemo.ui.base
+package com.cui.mvvmdemo.base
 
 import android.os.Bundle
 import android.util.Log

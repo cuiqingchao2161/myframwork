@@ -16,7 +16,7 @@ import com.cui.mvvmdemo.filebrowser.entity.FileEntity
 import com.cui.mvvmdemo.filebrowser.utils.FileSelectFilter
 import com.cui.mvvmdemo.filebrowser.viewmodel.FilePickerViewModel
 import com.cui.mvvmdemo.filebrowser.ui.adapter.ReceiveFileShowAdapter
-import com.cui.mvvmdemo.ui.base.BaseFragment
+import com.cui.mvvmdemo.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_file_all.*
 import java.io.File
 

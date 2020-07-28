@@ -11,9 +11,9 @@ import androidx.viewpager.widget.ViewPager
 import com.cui.mvvmdemo.R
 import com.cui.mvvmdemo.demos.threed_gallery.MainActivity
 import com.cui.mvvmdemo.demos.threed_gallery.Rotate3dAnimation
-import com.cui.mvvmdemo.utils.DrawableUtil
-import com.cui.mvvmdemo.widgets.MainViewPagerAdapter
-import com.cui.mvvmdemo.ui.base.BaseFragment
+import com.cui.lib.utils.DrawableUtil
+import com.cui.mvvmdemo.ui.widgets.MainViewPagerAdapter
+import com.cui.mvvmdemo.base.BaseFragment
 import kotlinx.android.synthetic.main.activity_main_layout.*
 
 /**

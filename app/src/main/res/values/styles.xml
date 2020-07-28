@@ -71,6 +71,8 @@
         <item name="android:textSize">@dimen/normal_text_size</item>
         <item name="android:textColor">@color/black</item>
     </style>
+
+
 </resources>
 
 

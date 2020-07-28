@@ -15,7 +15,7 @@ import com.cui.mvvmdemo.constant.MainConstant.PIC_PATH
 import com.cui.mvvmdemo.filebrowser.entity.FileEntity
 import com.cui.mvvmdemo.filebrowser.viewmodel.FilePickerViewModel
 import com.cui.mvvmdemo.filebrowser.ui.adapter.ReceiveFileShowAdapter
-import com.cui.mvvmdemo.ui.base.BaseFragment
+import com.cui.mvvmdemo.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_file_normal.*
 
 /**

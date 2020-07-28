@@ -9,8 +9,9 @@ import com.cui.mvvmdemo.bean.ReqResult
 import com.cui.mvvmdemo.constant.MainConstant
 import com.cui.mvvmdemo.filebrowser.entity.FileEntity
 import com.cui.mvvmdemo.filebrowser.utils.FileUtils
-import com.cui.mvvmdemo.ui.base.BaseViewModel
+import com.cui.mvvmdemo.base.BaseViewModel
 import io.reactivex.Observable
+import io.reactivex.ObservableEmitter
 import io.reactivex.ObservableOnSubscribe
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -24,13 +25,13 @@ class FilePickerViewModel : BaseViewModel() {
             ToastUtils.show(R.string.not_available)
             return
         }
-       Observable.create(ObservableOnSubscribe<String> {
+       Observable.create(ObservableOnSubscribe<String>(fun(it: ObservableEmitter<String>) {
            var files = getFileList(fileAbsolutePath)
            val fileData = ReqResult<ArrayList<FileEntity>>()
            fileData.status = MainConstant.STATUS_SUCCESS
            fileData.data = files
            mutablePathLiveData.postValue(fileData)
-       })
+       }))
                .subscribeOn(Schedulers.io())
                .observeOn(AndroidSchedulers.mainThread())
                .subscribe ()

@@ -1,7 +1,7 @@
 package com.cui.mvvmdemo.demos.navigation_threed
 
 import com.cui.mvvmdemo.R
-import com.cui.mvvmdemo.ui.base.BaseFragment
+import com.cui.mvvmdemo.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_workbench.*
 
 

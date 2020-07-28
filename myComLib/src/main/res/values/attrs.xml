@@ -20,4 +20,14 @@
         <attr name="is_show_border" format="reference|boolean" />
         <attr name="bg_color" format="reference|color"/>
     </declare-styleable>
+
+    <declare-styleable name="GestureDetectorLayout">
+        <attr name="is_show_hint" format="boolean"/>
+        <attr name="is_show_menu" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="focusConstraintLayout">
+        <attr name="zoom" format="float"/>
+        <attr name="anim_duration" format="integer"/>
+    </declare-styleable>
 </resources>

@@ -1,4 +1,4 @@
-package com.cui.mvvmdemo.ui.base
+package com.cui.mvvmdemo.base
 
 
 import android.Manifest
@@ -12,16 +12,17 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.cui.lib.toast.ToastUtils
+import com.cui.lib.utils.HomeWatcher
+import com.cui.lib.utils.NewStatusBarUtil
+import com.cui.lib.utils.PermissionUtil
 import com.cui.mvvmdemo.R
-import com.cui.mvvmdemo.utils.HomeWatcher
-import com.cui.mvvmdemo.utils.NewStatusBarUtil
-import com.cui.mvvmdemo.utils.PermissionUtil
-import com.cui.mvvmdemo.widgets.dialog.LoadingDialog
-import com.cui.mvvmdemo.widgets.dialog.PermissionDialog
+import com.cui.mvvmdemo.ui.widgets.dialog.LoadingDialog
+import com.cui.mvvmdemo.ui.widgets.dialog.PermissionDialog
 import com.cui.mvvmdemo.navigation.NavigatorBack
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.internal.operators.observable.ObservableJust
 import java.util.concurrent.TimeUnit
+import java.util.logging.Logger
 
 /**
  * description : 项目中activity唯一基类，统一规范代码
@@ -46,7 +47,7 @@ abstract class BaseActivity : AppCompatActivity() , PermissionUtil.PermissionRes
     override fun onStart() {
         Log.d(TAG, "onStart: ")
         super.onStart()
-        NewStatusBarUtil.setStatusBarColor(this, R.color.white)//设置状态栏颜色和顶部布局背景色一致
+        NewStatusBarUtil.setStatusBarColor(this, R.color.white_color)//设置状态栏颜色和顶部布局背景色一致
         NewStatusBarUtil.setStatusBarTextColor(this,true)
         watchHomeAndPowerPress()
     }

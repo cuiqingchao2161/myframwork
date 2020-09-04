@@ -64,7 +64,7 @@
             android:name="com.cui.lib.utils.glide.HiGlideModule"
             android:value="AppGlideModule" />
 
-         <activity android:name="com.cui.mvvmdemo.demos.gestureDetector.GestureDetectorDemoActivity"
+         <activity android:name="com.cui.mvvmdemo.demos.rxjava.TestRxjava2Activity"
              android:launchMode="singleTask">
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />

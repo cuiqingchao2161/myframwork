@@ -31,7 +31,7 @@ import java.util.logging.Logger
  */
 
 abstract class BaseActivity : AppCompatActivity() , PermissionUtil.PermissionResultCallBack  {
-    public open var TAG = "BaseActivity"
+    open var TAG = this.javaClass.simpleName
     private var mHomeWatcher: HomeWatcher? = null
     var isInRecentTask = false
     var isResume = false

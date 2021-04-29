@@ -213,7 +213,7 @@ abstract class BaseActivity : AppCompatActivity() , PermissionUtil.PermissionRes
         super.onTrimMemory(level)
     }
 
-    val permissions:Array<String?>? = arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE, Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO)
+    val permissions:Array<String?>? = arrayOf(android.Manifest.permission.READ_CALENDAR, android.Manifest.permission.WRITE_CALENDAR, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_PHONE_STATE, Manifest.permission.CAMERA, Manifest.permission.RECORD_AUDIO)
     var permissionReqCode = 1000
     override fun showRationaleForPermission() {
         Log.i(TAG,"showRationaleForPermission")

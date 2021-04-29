@@ -1,8 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cui.mvvmdemo">
-
     <!-- Required  JPush 一些系统要求的权限，如访问网络等 -->
+    <application
+        android:name=".base.MyApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".demos.calendarReminder.CalendarReminderActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <activity android:name=".demos.hardwareAccelerated.TestHardwareAcceleratedSecondActivity" />
+        <activity android:name=".demos.threed_gallery.MainActivity" />
+        <activity android:name=".ui.activity.BigimgshowActivity" />
+        <activity android:name=".ui.activity.WebActivity" />
+        <activity android:name=".filebrowser.ui.FilePickerActivity" />
+
+        <meta-data
+            android:name="com.cui.lib.utils.glide.HiGlideModule"
+            android:value="AppGlideModule" />
+
+        <service
+            android:name="com.cui.aidl.service.MyService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.cui.aidl.service.IMyAidlInterface" />
+            </intent-filter>
+        </service>
+    </application>
     <uses-permission android:name="${applicationId}.permission.JPUSH_MESSAGE" />
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -11,22 +46,18 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- Optional for location -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-    <!-- Optional for location -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" /> <!-- 软件权限 -->
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
-    <!-- 软件权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 环信权限 -->
     <uses-permission android:name="android.permission.CAMERA" />
-
-    <!-- 环信权限 -->
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -45,47 +76,14 @@
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
     <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
-    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
+    <uses-permission android:name="com.sec.android.provider.badge.permission.READ" /> <!-- 申请华为角标权限 -->
     <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" />
-    <!-- 申请华为角标权限 -->
     <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
     <uses-permission android:name="com.huawei.android.launcher.permission.READ_SETTINGS" />
+
     <uses-permission android:name="com.huawei.android.launcher.permission.WRITE_SETTINGS" />
-
-    <application
-        android:name=".base.MyApplication"
-        android:allowBackup="false"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <meta-data
-            android:name="com.cui.lib.utils.glide.HiGlideModule"
-            android:value="AppGlideModule" />
-
-         <activity android:name="com.cui.mvvmdemo.demos.rxjava.TestRxjava2Activity"
-             android:launchMode="singleTask">
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
-         </activity>
-
-        <activity android:name=".demos.threed_gallery.MainActivity" />
-        <activity android:name=".ui.activity.BigimgshowActivity" />
-        <activity android:name=".ui.activity.WebActivity"/>
-        <activity android:name=".filebrowser.ui.FilePickerActivity"/>
-
-        <service
-            android:name="com.cui.aidl.service.MyService"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.cui.aidl.service.IMyAidlInterface" />
-            </intent-filter>
-        </service>
-
-    </application>
+    <!--日历提醒功能 -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
 
 </manifest>

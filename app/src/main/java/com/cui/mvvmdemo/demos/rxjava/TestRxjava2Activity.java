@@ -5,11 +5,8 @@ import android.widget.TextView;
 
 import com.cui.mvvmdemo.R;
 import com.cui.mvvmdemo.base.BaseActivity;
-import com.elvishew.xlog.XLog;
 
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -77,41 +74,8 @@ public class TestRxjava2Activity extends BaseActivity {
                 });
     }
 
-
-    static boolean isComplete = false;
     static boolean hasCondition = false;
     private Object lock = new Object();
-    private Lock myLock = new Lock() {
-        @Override
-        public void lock() {
-
-        }
-
-        @Override
-        public void lockInterruptibly() throws InterruptedException {
-
-        }
-
-        @Override
-        public boolean tryLock() {
-            return false;
-        }
-
-        @Override
-        public boolean tryLock(long time, TimeUnit unit) throws InterruptedException {
-            return false;
-        }
-
-        @Override
-        public void unlock() {
-
-        }
-
-        @Override
-        public Condition newCondition() {
-            return null;
-        }
-    };
 
     private void repeatWhen() {
         count = 0;
@@ -119,15 +83,11 @@ public class TestRxjava2Activity extends BaseActivity {
 
         Observable.create(new ObservableOnSubscribe<Boolean>() {
             public void subscribe(@NonNull ObservableEmitter<Boolean> e) throws Exception {
-
                 Log.i(TAG1, "count:" + count);
-
-//                myLock.lock();
                 if (count < 10) {
                     if (hasCondition) {
                         e.onNext(true);
                         Log.i(TAG1, "轮询成功 轮询次数：" + count);
-//                        e.onError(new Throwable("轮询成功 轮询次数："+count));
                     } else {
                         e.onNext(false);
                         Log.i(TAG1, "onComplete1");
@@ -145,18 +105,13 @@ public class TestRxjava2Activity extends BaseActivity {
                         return objectObservable.flatMap(new Function<Object, ObservableSource<?>>() {
                             @Override
                             public ObservableSource<?> apply(@NonNull Object throwable) throws Exception {
-//                        count++ ;
                                 Log.i(TAG1, "pollingRecordState repeat");
-//                        if(isComplete){
-//                            return Observable.error(new Throwable("轮询成功"));
-//                        }
                                 // 加入判断条件：当轮询次数 = 5次后，就停止轮询
                                 if (count > 20) {
                                     Log.i(TAG1, "pollingRecordState failed");
                                     // 此处选择发送onError事件以结束轮询，因为可触发下游观察者的onError（）方法回调
                                     return Observable.error(new Throwable("轮询结束"));
                                 }
-//                        myLock.lock();
                                 synchronized (lock) {
                                     lock.wait();
                                     Log.i(TAG1, "pollingRecordState repeat1");
@@ -167,7 +122,6 @@ public class TestRxjava2Activity extends BaseActivity {
 
                             }
                         });
-//                return objectObservable.delay(50, TimeUnit.MILLISECONDS);
                     }
                 })
                 .subscribeOn(Schedulers.io())
@@ -181,17 +135,15 @@ public class TestRxjava2Activity extends BaseActivity {
                     @Override
                     public void onNext(Boolean aBoolean) {
                         Log.i(TAG1, "onNext");
-                        if (count >= 0) {
+                        if (count >= 5) {
                             hasCondition = true;
                         }
                         count++;
                         if (aBoolean) {
-//                            isComplete = true;
                             Log.i(TAG1, "pollingRecordState success");
                         } else {
                             Log.i(TAG1, "音频不可用");
                         }
-                        myLock.unlock();
                         synchronized (lock) {
                             lock.notify();
                         }
@@ -202,7 +154,6 @@ public class TestRxjava2Activity extends BaseActivity {
                         Log.i(TAG1, "onError");
                         // 获取轮询结束信息
                         Log.d(TAG1, e.toString());
-//                        myLock.unlock();
                         synchronized (lock) {
                             lock.notify();
                         }
@@ -213,18 +164,6 @@ public class TestRxjava2Activity extends BaseActivity {
                         Log.i(TAG1, "onComplete");
                     }
                 });
-//                .subscribe(new Consumer<Boolean>() {
-//                    @Override
-//                    public void accept(Boolean aBoolean) throws Exception {
-//                        count++ ;
-//                        if(aBoolean){
-//                            isComplete = true;
-//                            Log.i(TAG,"pollingRecordState success");
-//                        }else {
-//                            Log.i(TAG,"音频不可用");
-//                        }
-//                    }
-//                });
     }
 
 

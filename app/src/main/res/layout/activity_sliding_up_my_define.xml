@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@mipmap/bg7"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="海贼王"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/hat_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone" />
+
+
+    <ScrollView
+        xmlns:sothree="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/sliding_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="410dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="bottom">
+
+        <!-- SLIDING LAYOUT -->
+        <RelativeLayout
+            android:id="@+id/dragView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="false">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="360dp"
+                android:background="@color/transparent"/>
+            <LinearLayout
+                android:id="@+id/pull_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/view"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="3dp">
+
+                <ImageView
+                    android:id="@+id/pull_imageview"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/pull_up" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/bottom_layout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/pull_layout"
+                android:background="#ADD8E6"
+                >
+
+                <TextView
+                    android:id="@+id/simple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="蒙奇·D·路飞 日本漫画《航海王》及其衍生作品中的主角，外号“草帽”路飞，草帽一伙、草帽大船团船长，极恶的世代之一。 橡胶果实能力者的橡胶人，悬赏金15亿贝里。梦想是找到传说中的One Piece，成为海贼王" />
+
+                <LinearLayout
+                    android:id="@+id/list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_margin="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="路飞性格积极乐观，爱憎分明，而且十分重视伙伴，不甘屈居于他人之下，对任何危险的事物都超感兴趣。和其他传统的海贼所不同的是，他并不会为了追求财富而杀戮，而是享受着身为海贼的冒险和自由。" />
+
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:src="@mipmap/luff"/>
+
+
+                    <TextView
+                        android:layout_margin="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="路飞（Luffy）这名字源自英语“Luff”，意即“逆风航行”，这是他想过最适合船长使用的名字。此外，他也指出路飞生下来就是运势非凡的人；只有实力和运气兼备的人，才能成就伟大功业。" />
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/dragView1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="bottom"
+        android:clickable="true"
+        android:focusable="false">
+
+        <LinearLayout
+            android:id="@+id/pull_layout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="3dp">
+
+            <ImageView
+                android:id="@+id/pull_imageview1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/pull_up" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_layout31"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pull_layout1"
+            android:background="#ADD8E6"
+            >
+
+            <TextView
+                android:id="@+id/simple1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="蒙奇·D·路飞 日本漫画《航海王》及其衍生作品中的主角，外号“草帽”路飞，草帽一伙、草帽大船团船长，极恶的世代之一。 橡胶果实能力者的橡胶人，悬赏金15亿贝里。梦想是找到传说中的One Piece，成为海贼王" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

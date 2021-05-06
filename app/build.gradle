@@ -7,8 +7,8 @@ android {
         enabled = true
     }
 
-
     compileSdkVersion 29
+    buildToolsVersion = '29.0.2'
     defaultConfig {
         applicationId "com.cui.mvvmdemo"
         minSdkVersion 21
@@ -48,23 +48,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    buildToolsVersion = '29.0.2'
-
-
-//    externalNativeBuild {
-//        cmake {
-//            path "CMakeLists.txt"
-//        }
-//    }
-//    sourceSets {
-//        main {
-//            jniLibs.srcDirs = ['libs']
-//        }
-//    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 }
 
 dependencies {
@@ -97,7 +80,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
     implementation 'com.jcodecraeer:xrecyclerview:1.6.0'
     implementation 'com.google.android.material:material:1.0.0'
-    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.34'
+
 //    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.airbnb.android:lottie:3.2.2'
     implementation project(":vrlibrary")

@@ -2,9 +2,9 @@ package com.cui.mvvmdemo.filebrowser.viewmodel
 
 import android.os.Environment
 import androidx.lifecycle.MutableLiveData
+import com.cui.lib.base.EventMutableLiveData
 import com.cui.lib.toast.ToastUtils
 import com.cui.mvvmdemo.R
-import com.cui.mvvmdemo.base.EventMutableLiveData
 import com.cui.mvvmdemo.bean.ReqResult
 import com.cui.mvvmdemo.constant.MainConstant
 import com.cui.mvvmdemo.filebrowser.entity.FileEntity

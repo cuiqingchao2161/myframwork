@@ -1,6 +1,6 @@
 package com.cui.mvvmdemo.ui.model;
 
-import com.cui.mvvmdemo.base.BaseLoadListener;
+import com.cui.lib.base.BaseLoadListener;
 import com.cui.mvvmdemo.bean.SimpleNewsBean;
 
 /**

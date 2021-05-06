@@ -4,8 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.util.Log;
 
+import com.cui.lib.base.BaseLoadListener;
 import com.cui.lib.toast.ToastUtils;
-import com.cui.mvvmdemo.base.BaseLoadListener;
 import com.cui.mvvmdemo.bean.NewsData;
 import com.cui.mvvmdemo.bean.SimpleNewsBean;
 import com.cui.mvvmdemo.constant.MainConstant;

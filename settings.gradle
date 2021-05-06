@@ -1,1 +1,2 @@
+include ':animation'
 include ':app',':vrlibrary', ':myComLib'

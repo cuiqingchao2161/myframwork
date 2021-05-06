@@ -3,8 +3,8 @@ package com.cui.mvvmdemo.ui.model;
 import android.os.Handler;
 import android.util.Log;
 
+import com.cui.lib.base.BaseLoadListener;
 import com.cui.mvvmdemo.retrofitinterface.HttpUtils;
-import com.cui.mvvmdemo.base.BaseLoadListener;
 import com.cui.mvvmdemo.bean.NewsBean;
 import com.cui.mvvmdemo.bean.SimpleNewsBean;
 

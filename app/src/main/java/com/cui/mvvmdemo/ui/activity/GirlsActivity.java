@@ -15,7 +15,7 @@ import com.cui.mvvmdemo.ui.viewmodel.NewsVM;
 import com.cui.lib.utils.NewStatusBarUtil;
 import com.cui.mvvmdemo.ui.viewmodel.NewsItemClickCallback;
 import com.cui.mvvmdemo.ui.viewmodel.TestLifecycleObserver;
-import com.cui.mvvmdemo.base.BaseActivity;
+import com.cui.lib.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;

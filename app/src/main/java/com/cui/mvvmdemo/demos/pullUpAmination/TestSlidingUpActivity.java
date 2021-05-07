@@ -2,7 +2,6 @@ package com.cui.mvvmdemo.demos.pullUpAmination;
 
 import android.graphics.Color;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -10,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cui.mvvmdemo.R;
-import com.cui.mvvmdemo.base.BaseActivity;
+import com.cui.lib.base.BaseActivity;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 /**

@@ -1,4 +1,4 @@
-package com.cui.mvvmdemo.base
+package com.cui.lib.base
 
 
 import android.Manifest
@@ -22,7 +22,6 @@ import com.cui.mycommonlibrary.R
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.internal.operators.observable.ObservableJust
 import java.util.concurrent.TimeUnit
-import java.util.logging.Logger
 
 /**
  * description : 项目中activity唯一基类，统一规范代码
@@ -117,7 +116,6 @@ abstract class BaseActivity : AppCompatActivity() , PermissionUtil.PermissionRes
         setContentView(getLayoutId())
         process()
         initView()
-
         PermissionUtil.instance.checkPermissions(this@BaseActivity,permissions,permissionReqCode,this@BaseActivity)
 //        requestPerCallBackWithPermissionCheck()
     }

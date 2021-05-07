@@ -1,11 +1,9 @@
 package com.cui.mvvmdemo.demos.kotlin
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.util.Log
 import com.cui.mvvmdemo.R
-import com.cui.mvvmdemo.base.BaseActivity
+import com.cui.lib.base.BaseActivity
 
 class KotlinTestActivity : BaseActivity() {
     override fun getLayoutId(): Int {

@@ -1,13 +1,11 @@
-package com.hiscene.publiclib.core
+package com.cui.lib.core
 
 import android.app.Application
 import com.cui.mycommonlibrary.BuildConfig
 import com.elvishew.xlog.LogConfiguration
 import com.elvishew.xlog.LogLevel
 import com.elvishew.xlog.XLog
-import com.elvishew.xlog.XLog.tag
 import com.elvishew.xlog.printer.AndroidPrinter
-import com.elvishew.xlog.printer.Printer
 import com.elvishew.xlog.printer.file.FilePrinter
 import com.elvishew.xlog.printer.file.backup.NeverBackupStrategy
 import kotlin.properties.Delegates

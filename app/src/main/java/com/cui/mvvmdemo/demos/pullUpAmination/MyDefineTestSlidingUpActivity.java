@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cui.mvvmdemo.R;
-import com.cui.mvvmdemo.base.BaseActivity;
+import com.cui.lib.base.BaseActivity;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 /**

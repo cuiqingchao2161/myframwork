@@ -11,7 +11,7 @@ import com.cui.mvvmdemo.demos.threed_gallery.ZoomOutPageTransformer
 import com.cui.mvvmdemo.filebrowser.entity.FileEntity
 import com.cui.mvvmdemo.listener.NavigationFinishClickListener
 import com.cui.mvvmdemo.ui.widgets.ZoomImageView
-import com.cui.mvvmdemo.base.BaseActivity
+import com.cui.lib.base.BaseActivity
 import kotlinx.android.synthetic.main.image_details.*
 import kotlinx.android.synthetic.main.include_toolbar_layout.*
 

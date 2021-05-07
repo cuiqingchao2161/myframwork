@@ -11,7 +11,7 @@ import androidx.fragment.app.FragmentTransaction
 import com.cui.mvvmdemo.R
 import com.cui.mvvmdemo.filebrowser.utils.PickerManager
 import com.cui.mvvmdemo.listener.NavigationFinishClickListener
-import com.cui.mvvmdemo.base.BaseActivity
+import com.cui.lib.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_file_picker.*
 import kotlinx.android.synthetic.main.include_toolbar_layout.*
 

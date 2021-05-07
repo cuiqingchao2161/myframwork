@@ -7,7 +7,7 @@ import com.cui.lib.utils.DensityHelper
 import com.cui.lib.utils.WebViewHelper
 import com.cui.lib.toast.style.ToastAliPayStyle
 import com.cui.mvvmdemo.retrofitinterface.HttpUtils
-import com.hiscene.publiclib.core.BaseApplication
+import com.cui.lib.core.BaseApplication
 import com.tencent.smtt.sdk.QbSdk
 
 /**

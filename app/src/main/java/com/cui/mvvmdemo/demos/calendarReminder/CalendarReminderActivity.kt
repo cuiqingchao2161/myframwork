@@ -1,9 +1,8 @@
 package com.cui.mvvmdemo.demos.calendarReminder
 
-import android.widget.Toast
 import com.cui.lib.toast.ToastUtils
 import com.cui.mvvmdemo.R
-import com.cui.mvvmdemo.base.BaseActivity
+import com.cui.lib.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_calender_reminder.*
 
 /**

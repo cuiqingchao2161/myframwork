@@ -1,9 +1,8 @@
 package com.cui.mvvmdemo.demos.gestureDetector
 
 import com.cui.mvvmdemo.R
-import com.cui.mvvmdemo.base.BaseActivity
+import com.cui.lib.base.BaseActivity
 import com.cui.mvvmdemo.bean.Girl
-import com.cui.mvvmdemo.ui.adapter.GirlsAdapter
 import kotlinx.android.synthetic.main.activity_gesturedetector_demo_layout.*
 
 

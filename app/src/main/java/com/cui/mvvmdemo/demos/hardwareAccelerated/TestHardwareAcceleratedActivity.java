@@ -1,25 +1,16 @@
 package com.cui.mvvmdemo.demos.hardwareAccelerated;
 
 import android.content.Intent;
-import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.cui.mvvmdemo.R;
-import com.cui.mvvmdemo.base.BaseActivity;
-
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
+import com.cui.lib.base.BaseActivity;
 
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.core.util.Pair;
-import io.reactivex.Observable;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.functions.Predicate;
 
 /**
  *

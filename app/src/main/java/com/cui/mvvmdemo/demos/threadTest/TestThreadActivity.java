@@ -3,7 +3,7 @@ package com.cui.mvvmdemo.demos.threadTest;
 import android.util.Log;
 
 import com.cui.mvvmdemo.R;
-import com.cui.mvvmdemo.base.BaseActivity;
+import com.cui.lib.base.BaseActivity;
 
 /**
  * 测试结果：thread.start前调用thread的方法都是在调用线程（主线程）而非此thread中执行；

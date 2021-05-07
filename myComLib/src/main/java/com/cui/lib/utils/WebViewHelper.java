@@ -1,10 +1,9 @@
 package com.cui.lib.utils;
 
-import android.app.Application;
 import android.os.Build;
 import android.widget.LinearLayout;
 
-import com.hiscene.publiclib.core.BaseApplication;
+import com.cui.lib.core.BaseApplication;
 import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
 

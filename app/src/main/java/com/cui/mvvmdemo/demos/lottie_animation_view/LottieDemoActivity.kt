@@ -8,7 +8,7 @@ import com.airbnb.lottie.LottieComposition
 
 import com.cui.mvvmdemo.R
 import com.cui.mvvmdemo.navigation.Navigator
-import com.cui.mvvmdemo.base.BaseActivity
+import com.cui.lib.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_lottie_demo_layout.*
 import java.io.File
 import com.airbnb.lottie.ImageAssetDelegate
